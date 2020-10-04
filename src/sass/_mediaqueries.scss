@@ -1,0 +1,69 @@
+/** MEDIA QUERIES MIXINS. 
+ ** Some Rules ( assure Mobile First design )
+ **
+ ** Min-Width: Refers to everything greater than or equal to the amount given. 
+ ** Max-Width: Refers to everything less than or equal to the amount given.
+ **
+ ** Use relative units ( 100% = 1 em ~= 16px ~= 14pt )
+ ** 
+ ** Extra small devices (portrait phones, less than 576px) have 
+ ** No media query since this is the default ( like in Bootstrap )
+ ** If a specific phone(i.e. 320px) needs to be targeted, i can use the custom device mixin, r-minwidth().
+ **
+ ** Implementation example :
+    @include lg {
+        max-width: 90vw;
+        margin: $card-base-margin auto;
+    }
+ **
+**/
+
+// Small devices (landscape phones, 576px or 36em and up)
+$screen-mobile-landscape-min: 36em;
+// Medium devices (tablets, 768px or 48em and up)
+$screen-tablets-min: 48em;
+// Large devices (laptop and small-desktops, 992px or 62em and up )
+$screen-laptop-min: 62em;
+// Extra large devices (large desktops, 1200px or 75em and up )
+$screen-desktop-min: 75em;
+// Extra widescreens (from 1600px or 100em and up)
+$screen-widescreen-min: 100em;
+
+/** Responsive Brakpoints mixins using min-width -> up */
+
+@mixin small {
+    @media (min-width: #{$screen-mobile-landscape-min}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$screen-tablets-min}) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media (min-width: #{$screen-laptop-min}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$screen-desktop-min}) {
+        @content;
+    }
+}
+
+@mixin widescreen {
+    @media (min-width: #{$screen-widescreen-min}) {
+        @content;
+    }
+}
+
+// Custom Devices
+@mixin r-minwidth($screen) {
+    @media (min-width: $screen+'px') {
+        @content;
+    }
+}
