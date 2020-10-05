@@ -1,10 +1,13 @@
 ---
-layout: layouts/base-layout.njk
+layout: layouts/base.njk
 templateEngineOverride: njk,md
+locale: en
 ---
 `this is the home-page.`
 
 # 11ty starter
+
+{{site[locale].metaTitle}}
 
 ## Usage
 <br/>
