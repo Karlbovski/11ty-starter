@@ -2,10 +2,9 @@
   "name": "11ty-starter",
   "version": "1.0.0",
   "description": "Just what it needs to start an 11ty project.",
-  "main": "index.js",
   "scripts": {
-    "watch:sass": "sass --watch src/sass:public/css",
-    "build:sass": "sass src/sass:public/css",
+    "watch:sass": "sass --watch src/assets/sass:public/css",
+    "build:sass": "sass src/assets/sass:public/css",
     "watch:eleventy": "eleventy --serve",
     "build:eleventy": "eleventy",
     "dev": "npm-run-all build:sass --parallel watch:*",

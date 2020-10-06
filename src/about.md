@@ -1,5 +1,5 @@
 ---
-layout: layouts/base.njk
+layout: layouts/baseMain.njk
 templateEngineOverride: njk,md
 locale: en
 ---

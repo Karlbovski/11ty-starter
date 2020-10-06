@@ -1,5 +1,5 @@
 ---
-layout: layouts/base.njk
+layout: layouts/baseMain.njk
 templateEngineOverride: njk,md
 locale: en
 ---
@@ -22,23 +22,17 @@ locale: en
 ```
 <br/>
 
-The starter includes just a few lines in the`.eleventy.js` config file to setup the `sass` building pipeline and base site directories:
+The starter includes :
 
-```js
-module.exports = function (eleventyConfig) {
+    - sass pipeline : node sass
+    - build tool : npm-run-all
+    - js pipeline : !not yet implemented
+    - multilanguage : !not yet implemented
+    - cms : !not yet implemented
 
-    eleventyConfig.addWatchTarget("./src/sass/");
-    eleventyConfig.addPassthroughCopy("./src/css");
-
-    return {
-        dir: {
-            input: "src",
-            output: "public"
-        }
-    }
-}
-``` 
 <br/>
 
 # Start here
-- [11ty Docs](https://www.11ty.dev/docs/)
+<a href="https://www.11ty.dev/docs/" target="_blank" rel="noopener">11ty Docs</a>
+
+<a href="https://github.com/jeromecoupe/iad_eleventy_introduction/blob/master/eleventy_introduction_en.md" target="_blank" rel="noopener">Jerome Coupe - Eleventy Introduction</a>
