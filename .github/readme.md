@@ -1,36 +1,5 @@
 # 11ty starter  
 ## `v1.0.0`
 
-### Usage
-<br/>
+Nothin fancy here, just a very simple starter for [11ty](https://www.11ty.dev/) projects that includes a node **sass/scss** pipeline and two basic templates.
 
-``` 
-- clone the repo
-- rename working folder
-- remove git remote
-- npm install
-- npm outdated
-- npm audit
-```
-<br/>
-
-The starter includes just a few lines in the`.eleventy.js` config file to setup the `sass` building pipeline and base site directories:
-
-```js
-module.exports = function (eleventyConfig) {
-
-    eleventyConfig.addWatchTarget("./src/sass/");
-    eleventyConfig.addPassthroughCopy("./src/css");
-
-    return {
-        dir: {
-            input: "src",
-            output: "public"
-        }
-    }
-}
-``` 
-<br/>
-
-### Start here
-- [11ty Docs](https://www.11ty.dev/docs/)

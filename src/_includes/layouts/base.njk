@@ -1,16 +1,19 @@
----
-title: base-layout
----
 <!DOCTYPE html>
-<html lang="{{locale}}">
+<html lang="{% if locale %}{{locale}}{% else %}en{% endif %}">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{{title}}</title>
-        <meta name="description" content="{{ site[locale].metaDescription }}">
+        <title>{{ metaTitle}}</title>
+        <meta name="description" content="{{ metaDescription }}">
         <link rel="stylesheet" href="{{ '/css/styles.css' | url }}"/>
     </head>
     <body>
-        {{content | safe}}
+        <header>header</header>
+        <main>
+            {% block content %}
+                {{ content | safe }}
+            {% endblock %}
+        </main>
+        <footer>footer</footer>
     </body>
 </html>
