@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    height: 100%;
+    background-color: var(--color-back1);
+    color: var(--color-text1);
+    font-family: var(--ff-sans);
+    font-weight: 400;
+    line-height: 1.65;
+}
+
+body.light {
+    @include themelight;
+}
+
+body.dark {
+    @include themedark;
+}
+
+/* typography from https://type-scale.com/  css file */
+p {
+    margin-bottom: 1.15rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 2.75rem 0 1.05rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: var(--fs-h1);
+}
+
+h2 {
+    font-size: var(--fs-h2);
+}
+
+h3 {
+    font-size: var(--fs-h3);
+}
+
+h4 {
+    font-size: var(--fs-h4);
+}
+
+h5 {
+    font-size: var(--fs-h5);
+}
+
+small,
+.text_small {
+    font-size: var(--fs-small);
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-text3);
+}
+
+code {
+    color: var(--color-text4);
+}
+
+button {
+    all: unset;
+    display: inline-block;
+    cursor: pointer;
+    padding: .25em .5em;
+}
+
+img {
+    max-width: 100%;
+    display: block; // remove the bottom gap
+}

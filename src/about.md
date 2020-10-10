@@ -7,8 +7,7 @@ layout: "layouts/page.njk"
 # About
 <button id="themetoggle">toggle theme</button>
 
-This is a Markdown file.
----
+<small>This is a Markdown file.</small>
 
 **template engine** overriden in front-matter.
 

@@ -27,4 +27,6 @@ otherwise it will be placed in the root of the site (default)
 
 `permalink: "index.html"`
 
+<img src="https://picsum.photos/600/300">
+
 
