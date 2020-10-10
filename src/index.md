@@ -1,4 +1,6 @@
 ---
+metaTitle: Home
+metaDescription: Meta description in front matter
 layout: "layouts/page.njk"
 ---
 
@@ -13,7 +15,7 @@ The `index.njk` layout should be used for index pages. It contains some logics t
 
 It will check if the `locale` property is present and sets the front-matter `permalink` property accordingly.
 
-### Current permalink : 
+## Current permalink : 
 
 `"{% if locale %}{{ locale }}/{% endif %}index.html"`
 
@@ -27,6 +29,6 @@ otherwise it will be placed in the root of the site (default)
 
 `permalink: "index.html"`
 
-<img src="https://picsum.photos/600/300">
+<img src="https://picsum.photos/600/300" alt="picsum image">
 
 

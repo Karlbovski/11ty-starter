@@ -1,5 +1,6 @@
 ---
 templateEngineOverride: njk,md
+metaTitle: About
 metaDescription: Meta description in front matter
 layout: "layouts/page.njk"
 ---
