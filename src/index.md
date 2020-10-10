@@ -1,6 +1,10 @@
 ---
-layout: "layouts/index.njk"
+layout: "layouts/page.njk"
 ---
+
+<h1>Hallo
+<code>index.njk</code>Template</h1>
+<button id="themetoggle">toggle theme</button>
 
 The `index.njk`  layout should be used for index pages.
 

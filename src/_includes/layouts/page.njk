@@ -8,13 +8,12 @@
         <link rel="stylesheet" href="{{ '/css/main.css' | url }}"/>
     </head>
     <body>
-        <header>header</header>
+        {% include "partials/header.njk" %}
         <main>
             {% block content %}
                 {{ content | safe }}
             {% endblock %}
         </main>
-        <footer>footer</footer>
-        <script type="module" src="../js/main.js"></script>
+        {% include "partials/footer.njk" %}
     </body>
 </html>

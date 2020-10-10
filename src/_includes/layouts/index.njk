@@ -15,12 +15,5 @@ permalink: "{% if locale %}{{ locale }}/{% endif %}index.html"
 {% endif %}
 
 {% block content %}
-
-    <h1>Hallo
-        <code>index.njk</code>
-        Template</h1>
-    <button id="themetoggle">toggle theme</button>
-
     {{ content | safe }}
-
 {% endblock %}
