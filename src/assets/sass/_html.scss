@@ -23,3 +23,22 @@ body.light {
 body.dark {
     @include themedark;
 }
+
+/* here add typography from https://type-scale.com/  css file */
+
+a {
+    text-decoration: none;
+    color: var(--color-text3);
+}
+
+code {
+    color: var(--color-text4);
+}
+
+button {
+    all: unset;
+    cursor: pointer;
+    /* customize base buttons here */
+    border: 1px solid var(--color-back2);
+    padding: .25rem;
+}

@@ -1,6 +1,9 @@
 // theme mixins
 @mixin themelight {
     --color-text1: #222;
+    --color-text2: #5a5a5a;
+    --color-text3: #468083;
+    --color-text4: #9527b1;
     --color-back1: #f1faee;
     --color-back2: #a8dadc;
     --color-back3: #457b9d;
@@ -9,6 +12,9 @@
 
 @mixin themedark {
     --color-text1: #ddd;
+    --color-text2: #c9c9c9;
+    --color-text3: #86f9ff;
+    --color-text4: #ba5ef8;
     --color-back1: #1d3557;
     --color-back2: #457b9d;
     --color-back3: #a8dadc;

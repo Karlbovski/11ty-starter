@@ -10,8 +10,8 @@
     "dev": "npm-run-all build:sass --parallel watch:*",
     "build": "npm-run-all build:*"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["eleventy", "ssg", "starter"],
+  "author": "Stefano Giorgi",
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^0.11.0",

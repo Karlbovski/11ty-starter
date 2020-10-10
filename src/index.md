@@ -2,13 +2,14 @@
 layout: "layouts/page.njk"
 ---
 
-<h1>Hallo
-<code>index.njk</code>Template</h1>
+<h1>Hallo from <code>{{layout}}</code> Template</h1>
 <button id="themetoggle">toggle theme</button>
+<br/>
+<br/>
 
-The `index.njk`  layout should be used for index pages.
+We could use the additional template `index.njk`
 
-It has some logics to handle multilanguage sites.
+The `index.njk` layout should be used for index pages. It contains some logics to handle multilanguage sites. 
 
 It will check if the `locale` property is present and sets the front-matter `permalink` property accordingly.
 
@@ -16,11 +17,13 @@ It will check if the `locale` property is present and sets the front-matter `per
 
 `"{% if locale %}{{ locale }}/{% endif %}index.html"`
 
-This means that if the `locale` prop is set, this page will end in its own path
+This means that if the `locale` prop is set and we are usign the `index.njk` layout, 
+
+this page will end in its own path :
 
 `permalink: "locale/index.html"`
 
-otherwise will be placed in the root of the site
+otherwise it will be placed in the root of the site (default)
 
 `permalink: "index.html"`
 
