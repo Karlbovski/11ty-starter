@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    height: 100%;
+    background-color: var(--color-back1);
+    color: var(--color-text1);
+    font-family: var(--ff-sans);
+    line-height: 1.65;
+}
+
+body.light {
+    @include themelight;
+}
+
+body.dark {
+    @include themedark;
+}

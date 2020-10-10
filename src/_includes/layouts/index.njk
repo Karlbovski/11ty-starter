@@ -2,7 +2,7 @@
 permalink: "{% if locale %}{{ locale }}/{% endif %}index.html"
 ---
 
-{% extends "layouts/base.njk" %}
+{% extends "layouts/page.njk" %}
 
 {% if locale %}
     {% set metaTitle = site[locale].metaTitle %}
@@ -16,7 +16,10 @@ permalink: "{% if locale %}{{ locale }}/{% endif %}index.html"
 
 {% block content %}
 
-    <h1>Hallo Template</h1>
+    <h1>Hallo
+        <code>index.njk</code>
+        Template</h1>
+    <button id="themetoggle">toggle theme</button>
 
     {{ content | safe }}
 

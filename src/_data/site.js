@@ -1,6 +1,6 @@
 module.exports = {
     buildTime: new Date(),
-    baseUrl: "https://www.mysite.com",
+    baseUrl: "/",
     name: "mySite",
     twitter: "@handle",
     en: {

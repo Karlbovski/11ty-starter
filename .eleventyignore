@@ -1,5 +1,5 @@
 .github/
 node_modules/
 dist/
+public/
 src/assets/scss/
-src/assets/js/

@@ -1,6 +1,12 @@
+// 11ty configuration
+const
+  dev = global.dev  = (process.env.ELEVENTY_ENV === 'development'),
+  now = new Date();
+
 module.exports = function (eleventyConfig) {
 
     eleventyConfig.addWatchTarget("./src/assets/sass/");
+    eleventyConfig.addWatchTarget('./src/assets/js/modules/');
 
     // copy files
     // eleventyConfig.addPassthroughCopy("./src/assets/fonts/");

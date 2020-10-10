@@ -1,0 +1,37 @@
+// theme mixins
+@mixin themelight {
+    --color-text1: #222;
+    --color-back1: #f1faee;
+    --color-back2: #a8dadc;
+    --color-back3: #457b9d;
+    --color-back4: #1d3557;
+}
+
+@mixin themedark {
+    --color-text1: #ddd;
+    --color-back1: #1d3557;
+    --color-back2: #457b9d;
+    --color-back3: #a8dadc;
+    --color-back4: #f1faee;
+}
+
+:root {
+    --ff-serif: serif;
+    --ff-sans: sans-serif;
+    --ff-mono: monospace;
+    --fs-h1: 3.052em; // typography from https://type-scale.com/
+    --fs-h2: 2.441em;
+    --fs-h3: 1.953em;
+    --fs-h4: 1.563em;
+    --fs-h5: 1.25em;
+    --fs-small: 0.8em;
+    --fs-xsmall: 0.64em;
+
+    // colors: light theme (default)
+    @include themelight;
+
+    // dark theme (CSS)
+    @media (prefers-color-scheme: dark) {
+        @include themedark;
+    }
+}
