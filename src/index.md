@@ -10,7 +10,7 @@ layout: "layouts/page.njk"
 <button id="themetoggle" style="margin-bottom: 1rem;">toggle theme</button>
 
 
-<p>We could use the additional template `index.njk`</p>
+We could use the additional template `index.njk`
 
 The `index.njk` layout should be used for index pages. It contains some logics to handle multilanguage sites. 
 
