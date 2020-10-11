@@ -18,6 +18,35 @@ _todo doc..._
 _todo doc..._
 ## SASS/SCSS | CSS pipeline
 _todo doc..._
+### Vendors
+[Bulma](https://bulma.io/)
+
+Bulma is by far my favourite CSS framework but it's not included by default.
+How to have Bulma ready to go ?
+
+`npm i --save-dev bulma@latest`
+
+Open the `src/assets/sass/_vendors.scss` file and un-comment the first line.
+```sh
+// @import "~bulma/bulma"; // uncomment this line to import Bulma from npm package
+```
+Then open `src/assets/sass/main.scss` and unncomment the line that imports **vendors**.
+```sh
+@import "mediaqueries";
+@import "typography";
+@import "variables";
+@import "resets";
+// @import "vendors"; // uncomment to import 3rd party css frameworks/libraries
+@import "design";
+```
+> t i l >
+If e want to override Bulma variables it must be done before importing Bulma!!
+
+Now we can use Bulma inn our design.
+
+> t i l >
+Here we are importing Bulma as a whole. With a different approach we could import selectivily only the modules that we are oing to use!
+
 ## Usage 
 _todo doc..._
 
