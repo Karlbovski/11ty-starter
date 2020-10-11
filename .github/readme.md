@@ -1,36 +1,67 @@
 # 11ty starter  
 <small>`v1.0.0`</small>
 
-Nothin fancy here, just a very simple starter for [11ty](https://www.11ty.dev/) projects.
+## Nothing fancy here, just a very simple starter for [11ty](https://www.11ty.dev/) projects.
 
-Includes some build pipelines :
+The most barebone setup for a **clone-init-dev** experience and almost **zero-config** approach.
+I only added a few pre-configured elements to help me with the workflow I'm used to have.
 
-- A node **sass/scss** pipeline.
-- A javascript pipeline based on modules.
-
-and a basic template structure.
+<details>
+<summary>Templates pipeline</summary>
 
 ## Templates
 There are a couple of `nunjucks` templates logics, mostly there as an  example of how to handle multilanguage websites.
 
 _todo doc..._
+</details>
+
+<details>
+<summary>Javascript pipeline</summary>
+
 ## Javascript pipeline 
+Modular approach. All modules bundled and minified at build time using:
+
+<small><-package.json-></small>
+```sh
+"rollup": "^2.29.0",
+"rollup-plugin-terser": "^7.0.2",
+```
+The pipeline is taken from a very interesting article by [Craig Buckler](https://www.sitepoint.com/author/craig-buckler) on Sitepoint > [ Getting Started with 11ty](https://www.sitepoint.com/getting-started-with-eleventy/)
+
+> Client-side JavaScript could be handled with a    **transform**, but **JavaScript** templates named <something>.`11ty.js` are also an option because they’re automatically processed by **Eleventy**. The example code provides **ES6** scripts to implement simple *dark/light* theme switching. **Rollup.js** is used to bundle all modules referenced by `main.js` into a single file and perform tree-shaking to remove any unused functions. The `terser` plugin then minifies the resulting code.
+
+
+### JS Module | Example
+`src/assets/js/modules/dom.js`
+
+`src/assets/js/modules/theme.js`
+
+`src/assets/js/javascript.11ty.js`
+
+`src/assets/js/main.js`
+
 _todo doc..._
-## SASS/SCSS | CSS pipeline
+</details>
+
+<details>
+<summary>CSS pipeline</summary>
+
+## CSS pipeline | sass/scss 
 _todo doc..._
 ### Vendors
 [Bulma](https://bulma.io/)
 
-Bulma is by far my favourite CSS framework but it's not included by default.
+Bulma is my favourite CSS framework when I decide to use one but it's not included by default.
+
 How to have Bulma ready to go ?
 
-`npm i --save-dev bulma@latest`
+> `npm i --save-dev bulma@latest`
 
-Open the `src/assets/sass/_vendors.scss` file and un-comment the first line.
+Now **open** the `src/assets/sass/_vendors.scss` file and un-comment the first line.
 ```sh
 // @import "~bulma/bulma"; // uncomment this line to import Bulma from npm package
 ```
-Then open `src/assets/sass/main.scss` and unncomment the line that imports **vendors**.
+Then **open** the`src/assets/sass/main.scss` file and uncomment the line that imports **vendors**.
 ```sh
 @import "mediaqueries";
 @import "typography";
@@ -42,10 +73,12 @@ Then open `src/assets/sass/main.scss` and unncomment the line that imports **ven
 > t i l >
 If e want to override Bulma variables it must be done before importing Bulma!!
 
-Now we can use Bulma inn our design.
+Now we can use [Bulma](https://bulma.io/) in our design.
 
 > t i l >
-Here we are importing Bulma as a whole. With a different approach we could import selectivily only the modules that we are oing to use!
+Here we are importing Bulma as a whole. With a different approach we could import selectivily only the modules that we are oing to use! <small>[Read more here](https://bulma.io/documentation/customize/with-webpack/)</small>.
+</details>
+<br/>
 
 ## Usage 
 _todo doc..._
