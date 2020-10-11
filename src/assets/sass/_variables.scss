@@ -1,28 +1,37 @@
 // theme mixins
 @mixin themelight {
-    --color-text1: #222;
-    --color-text2: #5a5a5a;
-    --color-text3: #468083;
-    --color-text4: #9527b1;
-    --color-back1: #f1faee;
+    --color-foreground: #222;
+    --color-fore2: #5a5a5a;
+    --color-fore3: #468083;
+    --color-fore4: #321e8d;
+    --color-background: #f1faee;
     --color-back2: #a8dadc;
     --color-back3: #457b9d;
     --color-back4: #1d3557;
 }
 
 @mixin themedark {
-    --color-text1: #ddd;
-    --color-text2: #c9c9c9;
-    --color-text3: #86f9ff;
-    --color-text4: #ba5ef8;
-    --color-back1: #1d3557;
+    --color-foreground: #ddd;
+    --color-fore2: #c9c9c9;
+    --color-fore3: #86f9ff;
+    --color-fore4: #819eff;
+    --color-background: #1d3557;
     --color-back2: #457b9d;
     --color-back3: #a8dadc;
     --color-back4: #f1faee;
 }
 
 :root {
-    --ff-serif: serif;
+    // colors: light theme (default)
+    @include themelight;
+
+    // dark theme (CSS)
+    @media (prefers-color-scheme: dark) {
+        @include themedark;
+    }
+
+    --ff-serif: "Quattrocento",
+    serif;
     --ff-sans: sans-serif;
     --ff-mono: monospace;
     // typography from https://type-scale.com/
@@ -33,12 +42,4 @@
     --fs-h5: 1.25em;
     --fs-small: 0.8em;
     --fs-xsmall: 0.64em;
-
-    // colors: light theme (default)
-    @include themelight;
-
-    // dark theme (CSS)
-    @media (prefers-color-scheme: dark) {
-        @include themedark;
-    }
 }

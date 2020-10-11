@@ -1,14 +1,14 @@
 /* overrides and custom styles */
 
-/* i.e */
-// button {
-//     border: 1px solid var(--color-back3);
-//     background: var(--color-back2);
-//     color: var(--color-text2);
-//     transition: .350s;
+/* i.e - uncomment to test pipeline */
+button {
+    border: 1px solid var(--color-back3);
+    background: var(--color-back2);
+    color: var(--color-text2);
+    transition: .350s;
 
-//     &:hover {
-//         background: transparent;
-//         color: var(--color-text4);
-//     }
-// }
+    &:hover {
+        background: transparent;
+        color: var(--color-text4);
+    }
+}

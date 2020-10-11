@@ -6,7 +6,7 @@ layout: "layouts/page.njk"
 ---
 
 # About
-<button id="themetoggle">toggle theme</button>
+<button id="themetoggle" style="margin-bottom: 1rem;">toggle theme</button>
 
 <small>This is a Markdown file.</small>
 

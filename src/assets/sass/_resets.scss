@@ -10,9 +10,9 @@ html {
 
 body {
     height: 100%;
-    background-color: var(--color-back1);
-    color: var(--color-text1);
-    font-family: var(--ff-sans);
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--ff-serif);
     font-weight: 400;
     line-height: 1.65;
 }
@@ -36,7 +36,7 @@ h3,
 h4,
 h5 {
     margin: 2.75rem 0 1.05rem;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--ff-sans);
     font-weight: 400;
     line-height: 1.15;
 }
@@ -69,11 +69,13 @@ small,
 
 a {
     text-decoration: none;
-    color: var(--color-text3);
+    color: var(--color-fore3);
 }
 
+pre,
 code {
-    color: var(--color-text4);
+    color: var(--color-fore4);
+    font-family: var(--ff-mono);
 }
 
 button {
