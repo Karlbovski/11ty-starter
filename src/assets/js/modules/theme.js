@@ -26,7 +26,6 @@ window.addEventListener('DOMContentLoaded', () => {
     theme = (theme === 'dark' ? 'light' : 'dark');
     body.classList.add(theme);
     // localStorage.setItem(toggleId, theme);
-
   });
 
 });

@@ -6,7 +6,7 @@ const
 module.exports = function (eleventyConfig) {
 
     eleventyConfig.addWatchTarget("./src/assets/sass/");
-    eleventyConfig.addWatchTarget('./src/assets/js/modules/');
+    eleventyConfig.addWatchTarget('./src/assets/js/');
 
     // copy files
     // eleventyConfig.addPassthroughCopy("./src/assets/fonts/");
