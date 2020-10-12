@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="{% if locale %}{{locale}}{% else %}en{% endif %}">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            {% if metaTitle %}{{ metaTitle}}
+            {% else %}Generic title{% endif %}
+        </title>
+        <meta name="description" content="{% if metaDescription %}{{ metaDescription }}{% else %}Generic Description{% endif %}">
+        <link rel="stylesheet" href="{{ '/css/main.css' | url }}"/>
+    </head>
+    <body>
+        {# 
+            - build your template structure starting from this base template. 
+            - use inheratance and partials/components.
+            
+            example :
+        #}
+        {% include "components/header.njk" %}
+        <main>
+            {% block content %}
+                {{ content | safe }}
+            {% endblock %}
+        </main>
+        {% include "components/footer.njk" %}
+    </body>
+</html>

@@ -10,7 +10,31 @@ I only added a few pre-configured elements to help me with the workflow I'm used
 <summary>Templates pipeline</summary>
 
 ## Templates
-There are a couple of `nunjucks` templates logics, mostly there as an  example of how to handle multilanguage websites.
+[11ty](https://www.11ty.dev/docs/templates/) is super-flexible and supports several templates engines. Every project can be structured based on projects needs an current mood!! :)
+
+Example of `nunjucks` templates logics useful to handle multilanguage websites.
+
+```njk
+---
+permalink: "{% if locale %}{{ locale }}/{% endif %}index.html"
+---
+
+{% extends "layouts/page.njk" %}
+
+{% if locale %}
+    {% set metaTitle = site[locale].metaTitle %}
+    {% set metaDescription = site[locale].metaDescription %}
+    {% set metaImage = site[locale].metaImage %}
+{% else %}
+    {% set metaTitle = site["en"].metaTitle %}
+    {% set metaDescription = site["en"].metaDescription %}
+    {% set metaImage = site["en"].metaImage %}
+{% endif %}
+
+{% block content %}
+    {{ content | safe }}
+{% endblock %}
+```
 
 _todo doc..._
 </details>
