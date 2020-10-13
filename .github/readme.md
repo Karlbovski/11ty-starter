@@ -6,6 +6,8 @@
 The most barebone setup for a **clone-init-dev** experience and almost **zero-config** approach.
 I only added a few pre-configured elements to help me with the workflow I'm used to have.
 
+:construction:
+
 <details>
 <summary>Templates pipeline</summary>
 
@@ -111,5 +113,9 @@ _todo doc..._
 [11ty Docs](https://www.11ty.dev/docs/)
 
 [Sitepoint | Getting started with 11ty](https://www.sitepoint.com/getting-started-with-eleventy/)
+
+[Phil Hawksworth Blog](https://www.hawksworx.com/blog)
+
+[Webstoemp  | Multilingual sites with Eleventy](https://www.webstoemp.com/blog/multilingual-sites-eleventy/)
 
 [Seifi.org | Using CSS to detect and switch website themes to match system preferences](https://seifi.org/css/prefers-color-scheme.html)
