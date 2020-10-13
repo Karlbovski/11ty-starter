@@ -95,7 +95,7 @@ Then **open** the`src/assets/sass/main.scss` file and uncomment the line that im
 @import "design";
 ```
 > t i l >
-If e want to override Bulma variables it must be done before importing Bulma!!
+If we want to override Bulma variables it must be done before importing Bulma!!
 
 Now we can use [Bulma](https://bulma.io/) in our design.
 

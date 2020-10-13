@@ -7,16 +7,14 @@
             {% if metaTitle %}{{ metaTitle}}
             {% else %}Generic title{% endif %}
         </title>
-        <meta name="description" content="{% if metaDescription %}{{ metaDescription }}{% else %}Generic Description{% endif %}">
         <link rel="stylesheet" href="{{ '/css/main.css' | url }}"/>
+        <meta name="description" content="{% if metaDescription %}{{ metaDescription }}{% else %}Global Description{% endif %}">
+        <meta name="keywords" content="{% if metaKeywords %}{{ metaKeywords }}{% else %}Global Keywords{% endif %}">
+        {# {% include "components/favicons.njk" %} #}
+        {# {% include "components/opengraph.njk" %} #}
     </head>
     <body>
-        {# 
-            - build your template structure starting from this base template. 
-            - use inheratance and partials/components.
-            
-            example :
-        #}
+        {# example : #}
         {% include "components/header.njk" %}
         <main>
             {% block content %}
