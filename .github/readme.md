@@ -8,9 +8,9 @@
 The most barebone setup for a **clone-init-dev** experience and almost **zero-config** approach.
 I only added a few pre-configured elements to help me with my usual workflow.
 
->The major feature of this starter is its build pipeline for `sass` and `javascript` all the remaining components can be changed and the project restructured according to the project needs!
-
 :construction: :construction: :construction: :construction:
+
+>The major feature of this starter is its build pipeline for `sass` and `javascript` all the remaining components can be changed and the project restructured according to the project needs!
 
 > !Doc under Construction!
 
