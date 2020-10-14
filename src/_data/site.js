@@ -1,7 +1,8 @@
 module.exports = {
     buildTime: new Date(),
+    name: "www.mysite.com",
+    url: "https://www.mysite.com",
     baseUrl: "/",
-    name: "mySite",
     twitter: "@handle",
     en: {
         metaTitle: "Title in english",

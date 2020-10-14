@@ -6,7 +6,7 @@
 The most barebone setup for a **clone-init-dev** experience and almost **zero-config** approach.
 I only added a few pre-configured elements to help me with the workflow I'm used to have.
 
-:construction:
+:construction: :construction: :construction: :construction:
 
 <details>
 <summary>Templates pipeline</summary>
