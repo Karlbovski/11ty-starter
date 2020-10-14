@@ -1,5 +1,6 @@
 # 11ty starter  
 <small>`v1.0.0`</small>
+<small>DecCycle `2020.4`</small>
 
 ## Nothing fancy here, just a very simple starter for [11ty](https://www.11ty.dev/) projects.
 
