@@ -14,6 +14,8 @@ I only added a few pre-configured elements to help me with my usual workflow.
 
 > !Doc under Construction!
 
+<br/>
+
 <details>
 <summary>Templates pipeline</summary>
 
@@ -113,6 +115,20 @@ Here we are importing Bulma as a whole. With a different approach we could impor
 <br/>
 
 ## Usage 
+_todo doc..._
+
+- Clone 11ty-starter project into a new project folder .
+- Remove remote from cloned repo
+- (optional*) Set a new remote repo
+- (recommended) Check and set `package.json` file
+- `npm install`
+- (recommended) Check and set `package.json` file  after install
+- (recommended) `npm outdated` - `npm audit`
+- `npm run dev` - Test a dev build
+- Connect to Netlify
+    - Netlify CLI&UI environments setup
+-  [ ] n e x t
+
 _todo doc..._
 
 ## Resources
