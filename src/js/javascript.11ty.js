@@ -1,7 +1,5 @@
-// Javascript processing
-
 const
-    jsMain = 'assets/js/main.js',
+    jsMain = 'js/main.js',
     rollup = require('rollup'),
     terser = require('rollup-plugin-terser').terser,
 
@@ -28,9 +26,10 @@ const
     };
 
 module.exports = class {
+    
     data(){
         return{
-            permalink: 'js/main.js' , // jsMain,
+            permalink: jsMain,
             eleventyExcludeFromCollections: true
         };
     }
@@ -41,6 +40,9 @@ module.exports = class {
             { output } = await bundle.generate(outputOptions),
             out = output.length && output[0];
 
+        // process images
+        console.log('javascript.11ty.js - Javascript processing'); 
+        
         let code = '';
         if(out){
             // JS code

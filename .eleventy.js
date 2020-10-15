@@ -7,7 +7,7 @@ module.exports = function (eleventyConfig) {
 
     //  build pipeline
     eleventyConfig.addWatchTarget("./src/assets/sass/");
-    eleventyConfig.addWatchTarget('./src/assets/js/');
+    eleventyConfig.addWatchTarget('./src/js/');
 
     // plugins
     
@@ -37,8 +37,8 @@ module.exports = function (eleventyConfig) {
             input: "src",
             output: "public"
         },
-        templateFormats : ["njk", "md"],
         htmlTemplateEngine : "njk",
         markdownTemplateEngine : "njk",
+        // templateFormats : ["njk", "md"], // this will break .11ty.js templates, ho to add them ?
     }
 }

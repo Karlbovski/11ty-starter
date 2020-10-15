@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const
     toggleId = 'themetoggle',
     body = document.body;
-
+    
     // let
     // theme =
     //   localStorage.getItem(toggleId) ||
