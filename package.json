@@ -10,14 +10,18 @@
     "dev": "npm-run-all build:sass --parallel watch:*",
     "build": "npm-run-all build:*"
   },
-  "keywords": ["eleventy", "ssg", "starter"],
+  "keywords": [
+    "eleventy",
+    "ssg",
+    "starter"
+  ],
   "author": "Stefano Giorgi",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^0.11.0",
+    "@11ty/eleventy": "^0.11.1",
     "npm-run-all": "^4.1.5",
-    "rollup": "^2.29.0",
+    "rollup": "^2.34.0",
     "rollup-plugin-terser": "^7.0.2",
-    "sass": "^1.26.11"
+    "sass": "^1.29.0"
   }
 }
