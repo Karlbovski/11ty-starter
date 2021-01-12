@@ -39,6 +39,6 @@ module.exports = function (eleventyConfig) {
         },
         htmlTemplateEngine : "njk",
         markdownTemplateEngine : "njk",
-        // templateFormats : ["njk", "md"], // this will break .11ty.js templates, ho to add them ?
+        // templateFormats : ["njk", "md"], // this will break .11ty.js templates, how to add them ?
     }
 }

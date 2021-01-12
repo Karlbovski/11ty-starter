@@ -20,7 +20,7 @@ I only added a few pre-configured elements to help me with my usual workflow.
 <summary>Templates pipeline</summary>
 
 ## Templates
-[11ty](https://www.11ty.dev/docs/templates/) is super-flexible and supports several templates engines. Every project can be structured based on projects needs an current mood!! :)
+[11ty](https://www.11ty.dev/docs/templates/) is super-flexible and supports several templates engines. Every project can be structured based on projects needs and current mood!! :)
 
 Example of `nunjucks` templates logics useful to handle multilanguage websites.
 
@@ -57,7 +57,7 @@ Modular approach. All modules bundled and minified at build time using:
 
 <small><-package.json-></small>
 ```sh
-"rollup": "^2.29.0",
+"rollup": "^2.36.1",
 "rollup-plugin-terser": "^7.0.2",
 ```
 The pipeline is taken from a very interesting article by [Craig Buckler](https://www.sitepoint.com/author/craig-buckler) on Sitepoint > [ Getting Started with 11ty](https://www.sitepoint.com/getting-started-with-eleventy/)
