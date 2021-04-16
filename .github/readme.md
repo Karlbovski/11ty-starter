@@ -3,6 +3,15 @@
 
 <small>dev-cycle `2020.4`</small>
 
+<small>NPM Packages</small>
+```sh
+    "@11ty/eleventy": "^0.12.1"
+    "npm-run-all": "^4.1.5"
+    "rollup": "^2.45.2"
+    "rollup-plugin-terser": "^7.0.2"
+    "sass": "^1.32.8"
+```
+
 ## Nothing fancy here, just a very simple starter for [11ty](https://www.11ty.dev/) projects.
 
 The most barebone setup for a **clone-init-dev** experience and almost **zero-config** approach.
@@ -10,16 +19,11 @@ I only added a few pre-configured elements to help me with my usual workflow.
 
 :construction: :construction: :construction: :construction:
 
->The major feature of this starter is its build pipeline for `sass` and `javascript` all the remaining components can be changed and the project restructured according to the project needs!
+>The major feature of this starter is its build pipeline for `sass` and `javascript`. All the remaining components can be changed and the project restructured according to the project needs!
 
-> !Doc under Construction!
+___
+## Templates pipeline
 
-<br/>
-
-<details>
-<summary>Templates pipeline</summary>
-
-## Templates
 [11ty](https://www.11ty.dev/docs/templates/) is super-flexible and supports several templates engines. Every project can be structured based on projects needs and current mood!! :)
 
 Example of `nunjucks` templates logics useful to handle multilanguage websites.
@@ -45,17 +49,11 @@ permalink: "{% if locale %}{{ locale }}/{% endif %}index.html"
     {{ content | safe }}
 {% endblock %}
 ```
+___
+## Javascript pipeline
 
-_todo doc..._
-</details>
+Modular approach. All modules bundled and minified at build-time using:
 
-<details>
-<summary>Javascript pipeline</summary>
-
-## Javascript pipeline 
-Modular approach. All modules bundled and minified at build time using:
-
-<small><-package.json-></small>
 ```sh
 "rollup": "^2.36.1",
 "rollup-plugin-terser": "^7.0.2",
@@ -63,7 +61,6 @@ Modular approach. All modules bundled and minified at build time using:
 The pipeline is taken from a very interesting article by [Craig Buckler](https://www.sitepoint.com/author/craig-buckler) on Sitepoint > [ Getting Started with 11ty](https://www.sitepoint.com/getting-started-with-eleventy/)
 
 > Client-side JavaScript could be handled with a    **transform**, but **JavaScript** templates named <something>.`11ty.js` are also an option because they’re automatically processed by **Eleventy**. The example code provides **ES6** scripts to implement simple *dark/light* theme switching. **Rollup.js** is used to bundle all modules referenced by `main.js` into a single file and perform tree-shaking to remove any unused functions. The `terser` plugin then minifies the resulting code.
-
 
 ### JS Module | Example
 `src/assets/js/modules/dom.js`
@@ -74,14 +71,64 @@ The pipeline is taken from a very interesting article by [Craig Buckler](https:/
 
 `src/assets/js/main.js`
 
-_todo doc..._
-</details>
-
-<details>
-<summary>CSS pipeline</summary>
-
+___
 ## CSS pipeline | sass/scss 
-_todo doc..._
+This starter already includes a very basic `Sass/Scss` architecture. 
+It's probably not ideal for big projects that's why it can be changed and or extended very easily. I suggest to have something similar to the 7-1 Pattern (7 folders 1 file ).
+<details>
+<summary>7-1 example</summary>
+
+```css
+sass/
+|
+|–– abstracts/
+|   |– _variables.scss    # Sass Variables
+|   |– _functions.scss    # Sass Functions
+|   |– _mixins.scss       # Sass Mixins
+|   |– _placeholders.scss # Sass Placeholders
+|
+|–– base/
+|   |– _reset.scss        # Reset/normalize
+|   |– _typography.scss   # Typography rules
+|   …                     # Etc.
+|
+|–– components/
+|   |– _buttons.scss      # Buttons
+|   |– _carousel.scss     # Carousel
+|   |– _cover.scss        # Cover
+|   |– _dropdown.scss     # Dropdown
+|   …                     # Etc.
+|
+|–– layout/
+|   |– _navigation.scss   # Navigation
+|   |– _grid.scss         # Grid system
+|   |– _header.scss       # Header
+|   |– _footer.scss       # Footer
+|   |– _sidebar.scss      # Sidebar
+|   |– _forms.scss        # Forms
+|   …                     # Etc.
+|
+|–– pages/
+|   |– _home.scss         # Home specific styles
+|   |– _contact.scss      # Contact specific styles
+|   …                     # Etc.
+|
+|–– themes/
+|   |– _theme.scss        # Default theme
+|   |– _admin.scss        # Admin theme
+|   …                     # Etc.
+|
+|–– vendors/
+|   |– _bootstrap.scss    # Bootstrap
+|   |– _jquery-ui.scss    # jQuery UI
+|   …                     # Etc.
+|
+|– main.scss              # Main Sass file
+```
+
+</details>
+<br>
+
 ### Vendors
 [Bulma](https://bulma.io/)
 
@@ -111,11 +158,10 @@ Now we can use [Bulma](https://bulma.io/) in our design.
 
 > t i l >
 Here we are importing Bulma as a whole. With a different approach we could import selectivily only the modules that we are oing to use! <small>[Read more here](https://bulma.io/documentation/customize/with-webpack/)</small>.
-</details>
+
 <br/>
 
 ## Usage 
-_todo doc..._
 
 - Clone 11ty-starter project into a new project folder .
 - Remove remote from cloned repo
@@ -129,7 +175,6 @@ _todo doc..._
     - Netlify CLI&UI environments setup
 -  [ ] n e x t
 
-_todo doc..._
 
 ## Resources
 [11ty Docs](https://www.11ty.dev/docs/)
