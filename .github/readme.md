@@ -130,9 +130,10 @@ sass/
 <br>
 
 ### Vendors
-[Bulma](https://bulma.io/)
 
-Bulma is my favourite CSS framework when I decide to use one but it's not included by default.
+**CSS frameworks implementation**
+
+In this example we are going to install and setup [Bulma](https://bulma.io/) since it's my favourite CSS framework when I decide to use but the same procedure applies to other frameworks as well (of course take a look at their docs). 
 
 How to have Bulma ready to go ?
 
@@ -151,30 +152,24 @@ Then **open** the`src/assets/sass/main.scss` file and uncomment the line that im
 // @import "vendors"; // uncomment to import 3rd party css frameworks/libraries
 @import "design";
 ```
+Now we can use [Bulma](https://bulma.io/) in our design.
 > t i l >
 If we want to override Bulma variables it must be done before importing Bulma!!
 
-Now we can use [Bulma](https://bulma.io/) in our design.
+
 
 > t i l >
-Here we are importing Bulma as a whole. With a different approach we could import selectivily only the modules that we are oing to use! <small>[Read more here](https://bulma.io/documentation/customize/with-webpack/)</small>.
-
-<br/>
+Here we are importing Bulma as a whole. With a different approach we could import selectivily only the modules that we are oing to use! <small>[Read more here](https://bulma.io/documentation/customize/concepts/)</small>.
+---
 
 ## Usage 
-
-- Clone 11ty-starter project into a new project folder .
-- Remove remote from cloned repo
-- (optional*) Set a new remote repo
+- Fork or Download 11ty-starter project into a new project folder.
 - (recommended) Check and set `package.json` file
 - `npm install`
 - (recommended) Check and set `package.json` file  after install
 - (recommended) `npm outdated` - `npm audit`
-- `npm run dev` - Test a dev build
-- Connect to Netlify
-    - Netlify CLI&UI environments setup
--  [ ] n e x t
-
+- `npm run dev` - Dev build
+- `npm run build` - Build
 
 ## Resources
 [11ty Docs](https://www.11ty.dev/docs/)
@@ -186,3 +181,12 @@ Here we are importing Bulma as a whole. With a different approach we could impor
 [Webstoemp  | Multilingual sites with Eleventy](https://www.webstoemp.com/blog/multilingual-sites-eleventy/)
 
 [Seifi.org | Using CSS to detect and switch website themes to match system preferences](https://seifi.org/css/prefers-color-scheme.html)
+
+### Dev notes [*to remove*]
+
+- Clone 11ty-starter project into a new project folder.
+- Remove remote from cloned repo
+- (optional*) Set a new remote repo
+- Connect to Netlify
+    - Netlify CLI&UI environments setup
+

@@ -25,7 +25,10 @@ window.addEventListener('DOMContentLoaded', () => {
     body.classList.remove(theme);
     theme = (theme === 'dark' ? 'light' : 'dark');
     body.classList.add(theme);
+
+    // 
     // localStorage.setItem(toggleId, theme);
+    
   });
 
 });
