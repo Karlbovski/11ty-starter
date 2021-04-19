@@ -133,7 +133,7 @@ sass/
 
 **CSS frameworks implementation**
 
-In this example we are going to install and setup [Bulma](https://bulma.io/) since it's my favourite CSS framework when I decide to use but the same procedure applies to other frameworks as well (of course take a look at their docs). 
+In this example we are going to install and setup [Bulma](https://bulma.io/) since it's my favourite CSS framework when I decide to use one but the same procedure applies to other frameworks as well (of course take a look at their docs). 
 
 How to have Bulma ready to go ?
 
