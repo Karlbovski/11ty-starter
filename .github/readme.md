@@ -1,7 +1,7 @@
 # 11ty starter  
-<small>`v1.0.1`</small>
+<small>`v1.0.2`</small>
 
-<small>dev-cycle `2020.4`</small>
+<small>dev-cycle `2021.1`</small>
 
 <small>NPM Packages</small>
 ```sh
@@ -73,8 +73,13 @@ The pipeline is taken from a very interesting article by [Craig Buckler](https:/
 
 ___
 ## CSS pipeline | sass/scss 
-This starter already includes a very basic `Sass/Scss` architecture. 
-It's probably not ideal for big projects that's why it can be changed and or extended very easily. I suggest to have something similar to the 7-1 Pattern (7 folders 1 file ).
+This starter already includes a very basic `Sass/Scss` architecture that uses modern `Sass` standards. Everything is already set to `watch` and `build` from the `Sass` folder into our `public` folder.
+
+
+> The `Sass` pattern/structure used is not final and it will change.
+
+I suggest to have something similar to the 7-1 Pattern (7 folders 1 file ).
+
 <details>
 <summary>7-1 example</summary>
 
@@ -129,9 +134,10 @@ sass/
 </details>
 <br>
 
-### Vendors
+### Vendors 
 
 **CSS frameworks implementation**
+> !! This will change with the implementation of a modular Sass solution!!
 
 In this example we are going to install and setup [Bulma](https://bulma.io/) since it's my favourite CSS framework when I decide to use one but the same procedure applies to other frameworks as well (of course take a look at their docs). 
 
@@ -145,18 +151,14 @@ Now **open** the `src/assets/sass/_vendors.scss` file and un-comment the first l
 ```
 Then **open** the`src/assets/sass/main.scss` file and uncomment the line that imports **vendors**.
 ```sh
-@import "mediaqueries";
-@import "typography";
-@import "variables";
-@import "resets";
+@use "base";
+@use "components";
+@use "layouts";
 // @import "vendors"; // uncomment to import 3rd party css frameworks/libraries
-@import "design";
 ```
 Now we can use [Bulma](https://bulma.io/) in our design.
 > t i l >
 If we want to override Bulma variables it must be done before importing Bulma!!
-
-
 
 > t i l >
 Here we are importing Bulma as a whole. With a different approach we could import selectivily only the modules that we are oing to use! <small>[Read more here](https://bulma.io/documentation/customize/concepts/)</small>.
@@ -183,10 +185,8 @@ Here we are importing Bulma as a whole. With a different approach we could impor
 [Seifi.org | Using CSS to detect and switch website themes to match system preferences](https://seifi.org/css/prefers-color-scheme.html)
 
 ### Dev notes [*to remove*]
-
-- Clone 11ty-starter project into a new project folder.
-- Remove remote from cloned repo
-- (optional*) Set a new remote repo
-- Connect to Netlify
+- ~~sass migration - remove @imports where possible. Replace with @use and @forward~~
+- how to implement Bulma or other third-party framework with Dart Sass (@use and @forward).
+- Test Connect to Netlify
     - Netlify CLI&UI environments setup
 

@@ -6,7 +6,7 @@ layout: "layouts/base.njk"
 ---
 
 <div>
-<img src="https://picsum.photos/800/200" alt="picsum image">
+<img src="https://picsum.photos/1200/320" alt="picsum image">
 <h3>Hallo from {{layout}} Template</h3>
 <button id="themetoggle" style="margin-bottom: 1rem;">toggle theme</button>
 

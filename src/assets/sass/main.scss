@@ -1,9 +1,3 @@
-@import "mediaqueries";
-@import "typography";
-@import "variables";
-@import "resets";
-// @import "vendors"; // enable to import 3rd party css frameworks/libraries
-@import "design";
-
-
-// end imports
+@use "base";
+@use "components";
+@use "layouts";
