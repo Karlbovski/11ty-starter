@@ -6,19 +6,21 @@ layout: "layouts/base.njk"
 ---
 
 <div>
-<img src="https://picsum.photos/1200/320" alt="picsum image">
-<h3>Hallo from {{layout}} Template</h3>
-<button id="themetoggle" style="margin-bottom: 1rem;">toggle theme</button>
+<!-- <img src="https://picsum.photos/1200/320" alt="picsum image"> -->
+<h1>Hallo from {{layout}} Template</h1>
 
 ##  Usuall with flexibility comes complexity. 
-#### With `11ty` it's acutally not the case, that's why i love it.
-This is a markdown page. Probably we want to use Nunjucks
-templates to extends base templates and add collections to consume data, and , and ...
+### With `11ty` it's acutally not the case, that's why I <3 it.
+This is a markdown page. Probably we want to use [Nunjucks](https://mozilla.github.io/nunjucks/)
+templates to extends base templates and add collections to consume data and do all the other 8-) things.
 
-
-<p style="font-size:1.225rem">Current permalink : </p>
 <pre>
-<code>"{% if locale %}{{ locale }}/{% endif %}index.html"</code>
+url:<span>
+<code>"{% if locale %}{{ locale }}/{% endif %}{{page.url}}"</code>
+</span> 
+outputPath:<span>
+<code>"{% if locale %}{{ locale }}/{% endif %}{{page.outputPath}}"</code>
+</span>
 </pre>
 
 </div>

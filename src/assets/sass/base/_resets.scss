@@ -1,5 +1,5 @@
 /** Based on Andy Bell's modern CSS reset: https://piccalil.li/blog/a-modern-css-reset/ 
-plus some custom rule and preliminary setup **/
+plus some custom rules and preliminary TYPOGRAPHY setup **/
 @use "../abstracts"as *;
 
 /* Box sizing rules */
@@ -103,10 +103,10 @@ a:not([class]) {
     text-decoration-skip-ink: auto;
 }
 
-a {
-    // text-decoration: none; // old rule
-    color: var(--color-fore3);
-}
+// a {
+//     // text-decoration: none; // old rule
+//     color: var(--color-fore3);
+// }
 
 pre,
 code {

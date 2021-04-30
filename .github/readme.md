@@ -1,14 +1,16 @@
 # 11ty starter  
 <small>`v1.0.2`</small>
 
-<small>dev-cycle `2021.1`</small>
+<small>dev-cycle `2021.2`</small>
 
 <small>NPM Packages</small>
 ```sh
-    "@11ty/eleventy": "^0.12.1"
-    "npm-run-all": "^4.1.5"
-    "rollup": "^2.45.2"
-    "rollup-plugin-terser": "^7.0.2"
+    "@11ty/eleventy": "^0.12.1",
+    "markdown-it": "^12.0.6",
+    "markdown-it-emoji": "^2.0.0",
+    "npm-run-all": "^4.1.5",
+    "rollup": "^2.45.2",
+    "rollup-plugin-terser": "^7.0.2",
     "sass": "^1.32.8"
 ```
 
@@ -21,8 +23,9 @@ I only added a few pre-configured elements to help me with my usual workflow.
 
 >The major feature of this starter is its build pipeline for `sass` and `javascript`. All the remaining components can be changed and the project restructured according to the project needs!
 
-___
-## Templates pipeline
+</br>
+
+# Templates pipeline
 
 [11ty](https://www.11ty.dev/docs/templates/) is super-flexible and supports several templates engines. Every project can be structured based on projects needs and current mood!! :)
 
@@ -49,8 +52,9 @@ permalink: "{% if locale %}{{ locale }}/{% endif %}index.html"
     {{ content | safe }}
 {% endblock %}
 ```
-___
-## Javascript pipeline
+</br>
+
+# Javascript pipeline
 
 Modular approach. All modules bundled and minified at build-time using:
 
@@ -71,14 +75,15 @@ The pipeline is taken from a very interesting article by [Craig Buckler](https:/
 
 `src/assets/js/main.js`
 
-___
-## CSS pipeline | sass/scss 
-This starter already includes a very basic `Sass/Scss` architecture that uses modern `Sass` standards. Everything is already set to `watch` and `build` from the `Sass` folder into our `public` folder.
+</br>
 
+# CSS pipeline | sass/scss 
+This starter already includes a very basic `Sass/Scss` architecture that uses modern `Sass` standards. Everything is already set to `watch` and `build` from the `Sass` folder into our `public` folder.
 
 > The `Sass` pattern/structure used is not final and it will change.
 
-I suggest to have something similar to the 7-1 Pattern (7 folders 1 file ).
+The `Sass` pattern is inspired by the 7-1 Pattern (7 folders 1 file ) but simplified.
+
 
 <details>
 <summary>7-1 example</summary>
@@ -134,10 +139,31 @@ sass/
 </details>
 <br>
 
-### Vendors 
+## Typography
+I tend not to use self-hosted fonts by default. Who knows where the website is gonna be hosted and how good the CDN is, if there's one.
+Of course this can be easily changed if we know that the website is going to have a powerful host/cdn to serve its content.
 
-**CSS frameworks implementation**
-> !! This will change with the implementation of a modular Sass solution!!
+### Default
+The fonts calling the Google API inside the `<head>` of the base template.
+```html
+        ...
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Quattrocento&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ '/css/main.css' | url }}"/>
+        ...
+```
+
+I use [Type-scale css file](https://type-scale.com/) to set font-size as **root variables**. They are available across the entire project and applied to **html elements** inside the `reset.scss` file.
+
+## resets.scss
+The resets are based on [Andy Bell's modern CSS reset](https://piccalil.li/blog/a-modern-css-reset/) plus some custom rules and preliminary TYPOGRAPHY setup.
+
+## Vendors 
+
+**CSS frameworks implementation** - TBD
+
+<details>
+<summary>Legacy method</summary>
 
 In this example we are going to install and setup [Bulma](https://bulma.io/) since it's my favourite CSS framework when I decide to use one but the same procedure applies to other frameworks as well (of course take a look at their docs). 
 
@@ -162,9 +188,11 @@ If we want to override Bulma variables it must be done before importing Bulma!!
 
 > t i l >
 Here we are importing Bulma as a whole. With a different approach we could import selectivily only the modules that we are oing to use! <small>[Read more here](https://bulma.io/documentation/customize/concepts/)</small>.
----
+</details>
 
-## Usage 
+</br>
+
+# Usage 
 - Fork or Download 11ty-starter project into a new project folder.
 - (recommended) Check and set `package.json` file
 - `npm install`

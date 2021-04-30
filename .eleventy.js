@@ -9,7 +9,17 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addWatchTarget("./src/assets/sass/");
     eleventyConfig.addWatchTarget('./src/js/');
 
-    // plugins
+    // libraries and plugins
+    let markdownIt = require("markdown-it");
+    let markdownItEmoji = require("markdown-it-emoji");
+    let options = {
+      html: true,
+      breaks: true,
+      linkify: true
+    };
+    
+    let markdownLib = markdownIt(options).use(markdownItEmoji);
+    eleventyConfig.setLibrary("md", markdownLib);
     
     // static passthroughs
     // eleventyConfig.addPassthroughCopy("./src/assets/fonts/");

@@ -3,17 +3,21 @@
 main>div {
   display: grid;
   justify-content: center;
+  // place-items: center;
   padding: .25em;
 }
 
 header {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   padding: 1em;
 }
 
 footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   padding: 1em;
 }
