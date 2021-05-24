@@ -9,8 +9,9 @@ layout: "layouts/base.njk"
 <!-- <img src="https://picsum.photos/1200/320" alt="picsum image"> -->
 <h1>Hallo from {{layout}} Template</h1>
 
-##  Usuall with flexibility comes complexity. 
-### With `11ty` it's acutally not the case, that's why I <3 it.
+##  Me: Usually, with flexibility comes complexity. 
+### `11ty` : not under my watch.
+### that's why I <3 it.
 This is a markdown page. Probably we want to use [Nunjucks](https://mozilla.github.io/nunjucks/)
 templates to extends base templates and add collections to consume data and do all the other 8-) things.
 

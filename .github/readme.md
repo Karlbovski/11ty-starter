@@ -78,7 +78,9 @@ The pipeline is taken from a very interesting article by [Craig Buckler](https:/
 </br>
 
 # CSS pipeline | sass/scss 
-This starter already includes a very basic `Sass/Scss` architecture that uses modern `Sass` standards. Everything is already set to `watch` and `build` from the `Sass` folder into our `public` folder.
+This starter already includes a very basic `Sass/Scss` architecture that uses **modern** `Sass` **standards**. 
+
+Everything is already set to `watch` and `build` from the `Sass` folder into our `public` folder.
 
 > The `Sass` pattern/structure used is not final and it will change.
 
@@ -194,12 +196,9 @@ Here we are importing Bulma as a whole. With a different approach we could impor
 
 # Usage 
 - Fork or Download 11ty-starter project into a new project folder.
-- (recommended) Check and set `package.json` file
 - `npm install`
-- (recommended) Check and set `package.json` file  after install
-- (recommended) `npm outdated` - `npm audit`
-- `npm run dev` - Dev build
-- `npm run build` - Build
+- (recommended) run `npm outdated` - `npm audit`
+- `npm run dev` or `npm run build`
 
 ## Resources
 [11ty Docs](https://www.11ty.dev/docs/)
@@ -212,7 +211,7 @@ Here we are importing Bulma as a whole. With a different approach we could impor
 
 [Seifi.org | Using CSS to detect and switch website themes to match system preferences](https://seifi.org/css/prefers-color-scheme.html)
 
-### Dev notes [*to remove*]
+### TODO Next
 - ~~sass migration - remove @imports where possible. Replace with @use and @forward~~
 - how to implement Bulma or other third-party framework with Dart Sass (@use and @forward).
 - Test Connect to Netlify
