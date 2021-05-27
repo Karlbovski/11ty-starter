@@ -22,6 +22,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.setLibrary("md", markdownLib);
     
     // static passthroughs
+    
     // eleventyConfig.addPassthroughCopy("./src/assets/fonts/");
     // eleventyConfig.addPassthroughCopy("./src/assets/img/");
     /**
@@ -35,6 +36,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addFilter("kebab", require("./src/_filters/kebab.js") );
 
     // Assemble some collections
+
     // eleventyConfig.addCollection("tagList", require("./src/site/_filters/getTagList.js"));
     // eleventyConfig.addCollection("posts", function(collection) {
     // return collection.getFilteredByGlob("src/site/blog/*.md").reverse();
