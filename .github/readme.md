@@ -195,7 +195,7 @@ Here we are importing Bulma as a whole. With a different approach we could impor
 </br>
 
 # Usage 
-- Fork or Download 11ty-starter project into a new project folder.
+- Clone or Download 11ty-starter project into a new project folder.
 - `npm install`
 - (recommended) run `npm outdated` - `npm audit`
 - `npm run dev` or `npm run build`

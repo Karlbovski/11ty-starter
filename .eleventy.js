@@ -5,11 +5,11 @@ const
 
 module.exports = function (eleventyConfig) {
 
-    //  build pipeline
+    //** build pipeline */
     eleventyConfig.addWatchTarget("./src/assets/sass/");
     eleventyConfig.addWatchTarget('./src/js/');
 
-    // libraries and plugins
+    //** libraries and plugins */
     let markdownIt = require("markdown-it");
     let markdownItEmoji = require("markdown-it-emoji");
     let options = {
@@ -21,7 +21,7 @@ module.exports = function (eleventyConfig) {
     let markdownLib = markdownIt(options).use(markdownItEmoji);
     eleventyConfig.setLibrary("md", markdownLib);
     
-    // static passthroughs
+    //** static passthroughs */ 
     
     // eleventyConfig.addPassthroughCopy("./src/assets/fonts/");
     // eleventyConfig.addPassthroughCopy("./src/assets/img/");
@@ -32,17 +32,17 @@ module.exports = function (eleventyConfig) {
         // eleventyConfig.addPassthroughCopy("./src/assets/");
     */
 
-    // Add filters to Nunjucks
+    //** Add filters to Nunjucks */
     eleventyConfig.addFilter("kebab", require("./src/_filters/kebab.js") );
 
-    // Assemble some collections
+    //** Assemble some collections */ 
 
     // eleventyConfig.addCollection("tagList", require("./src/site/_filters/getTagList.js"));
     // eleventyConfig.addCollection("posts", function(collection) {
     // return collection.getFilteredByGlob("src/site/blog/*.md").reverse();
     // });
 
-    //** code here */
+    //** additional code here */
 
     return {
         dir: {
