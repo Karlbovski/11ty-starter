@@ -6,14 +6,15 @@
         <title>
             {% if metaTitle %}
                 {{ metaTitle }}
-                {% else %}Generic title
+            {% else %}
+                {{ site.metaTitle }}
             {% endif %}
         </title>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Quattrocento&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{{ '/css/main.css' | url }}"/>
-        <meta name="description" content="{% if metaDescription %}{{ metaDescription }}{% else %}Global Description{% endif %}">
-        <meta name="keywords" content="{% if metaKeywords %}{{ metaKeywords }}{% else %}Global Keywords{% endif %}">
+        <meta name="description" content="{% if metaDescription %}{{ metaDescription }}{% else %}{{ site.metaDescription }}{% endif %}">
+    <meta name="keywords" content="{% if metaKeywords %}{{ metaKeywords }}{% else %}{{ site.metaKeywords }}{% endif %}">
     {# {% include "components/favicons.njk" %} #}
         {# {% include "components/opengraph.njk" %} #}
     </head>

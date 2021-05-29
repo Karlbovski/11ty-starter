@@ -42,7 +42,11 @@ module.exports = function (eleventyConfig) {
     // return collection.getFilteredByGlob("src/site/blog/*.md").reverse();
     // });
 
-    //** additional code here */
+    //** additional settings here */
+    eleventyConfig.setBrowserSyncConfig({
+      notify: false,
+      startPath: "/en/"
+    });
 
     return {
         dir: {

@@ -13,46 +13,27 @@
     "rollup-plugin-terser": "^7.0.2",
     "sass": "^1.32.8"
 ```
+:construction: :construction: :construction: :construction:
 
 ## Nothing fancy here, just a very simple starter for [11ty](https://www.11ty.dev/) projects.
 
-The most barebone setup for a **clone-init-dev** experience and almost **zero-config** approach.
-I only added a few pre-configured elements to help me with my usual workflow.
+The most barebone setup for a **clone-init-dev** experience and **almost** zero-config approach.
 
-:construction: :construction: :construction: :construction:
+I've only added a few pre-configured elements to help me with my usual workflow.
 
->The major feature of this starter is its build pipeline for `sass` and `javascript`. All the remaining components can be changed and the project restructured according to the project needs!
+The project is already structured to allow localization and multilanguage features all based on [this awesome tutorial](https://www.webstoemp.com/blog/multilingual-sites-eleventy/) by Jérôme Coupé.
 
-</br>
+I might add more features in the future but I'll do my best to keep it a very bare starter.
 
-# Templates pipeline
+More features and differents structures will be added based on each project's needs.
+
+
+# Templates
 
 [11ty](https://www.11ty.dev/docs/templates/) is super-flexible and supports several templates engines. Every project can be structured based on projects needs and current mood!! :)
 
-Example of `nunjucks` templates logics useful to handle multilanguage websites.
+This starter uses [`nunjucks`](https://www.11ty.dev/docs/languages/nunjucks/) for templates.
 
-```njk
----
-permalink: "{% if locale %}{{ locale }}/{% endif %}index.html"
----
-
-{% extends "layouts/page.njk" %}
-
-{% if locale %}
-    {% set metaTitle = site[locale].metaTitle %}
-    {% set metaDescription = site[locale].metaDescription %}
-    {% set metaImage = site[locale].metaImage %}
-{% else %}
-    {% set metaTitle = site["en"].metaTitle %}
-    {% set metaDescription = site["en"].metaDescription %}
-    {% set metaImage = site["en"].metaImage %}
-{% endif %}
-
-{% block content %}
-    {{ content | safe }}
-{% endblock %}
-```
-</br>
 
 # Javascript pipeline
 
@@ -75,7 +56,6 @@ The pipeline is taken from a very interesting article by [Craig Buckler](https:/
 
 `src/assets/js/main.js`
 
-</br>
 
 # CSS pipeline | sass/scss 
 This starter already includes a very basic `Sass/Scss` architecture that uses **modern** `Sass` **standards**. 
@@ -195,12 +175,14 @@ Here we are importing Bulma as a whole. With a different approach we could impor
 </br>
 
 # Usage 
-- Clone or Download 11ty-starter project into a new project folder.
+- Clone or Download this repo into a new project folder.
 - `npm install`
 - (recommended) run `npm outdated` - `npm audit`
 - `npm run dev` or `npm run build`
 
-## Resources
+<br>
+
+# Resources
 [11ty Docs](https://www.11ty.dev/docs/)
 
 [Sitepoint | Getting started with 11ty](https://www.sitepoint.com/getting-started-with-eleventy/)
@@ -211,9 +193,13 @@ Here we are importing Bulma as a whole. With a different approach we could impor
 
 [Seifi.org | Using CSS to detect and switch website themes to match system preferences](https://seifi.org/css/prefers-color-scheme.html)
 
+<br>
+
 ### TODO Next
-- ~~sass migration - remove @imports where possible. Replace with @use and @forward~~
+- Multilingual out of the box - IN PROGRESS
+- More clear rules about Permalinks - IN PROGRESS
 - how to implement Bulma or other third-party framework with Dart Sass (@use and @forward).
+- ~~sass migration - remove @imports where possible. Replace with @use and @forward~~
 - Test Connect to Netlify
     - Netlify CLI&UI environments setup
 

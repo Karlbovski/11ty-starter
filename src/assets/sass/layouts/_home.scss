@@ -1,10 +1,11 @@
 /* For test purpose only. Delete all the following when starting a new project !*/
 
 main>div {
+  min-height: 100vh;
   display: grid;
   justify-content: center;
   // place-items: center;
-  padding: .25em;
+  padding: 2em;
 }
 
 header {

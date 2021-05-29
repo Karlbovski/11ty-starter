@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="{% if locale %}{{locale}}{% else %}en{% endif %}">
+<html lang="{% if locale %}{{ locale }}{% else %}en{% endif %}">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>
-            {% if metaTitle %}{{ metaTitle}}
-            {% else %}Generic title{% endif %}
+            {% if metaTitle %}
+                {{ metaTitle }}
+                {% else %}Generic title{% endif %}
         </title>
         {# <link rel="stylesheet" href="{{ '/css/main.css' | url }}"/> #}
         <meta name="description" content="{% if metaDescription %}{{ metaDescription }}{% else %}Global Description{% endif %}">
@@ -56,7 +57,8 @@
                 list-style: none;
                 background: #333;
                 border-radius: 5px;
-                // text-shadow: 0 0 10px rgba(255,255,255,.8), 0 0 20px rgba(255,255,255,.7), 0 0 22px rgba(255,255,255,.6), 0 0 40px rgba(66,220,219,.8), 0 0 50px rgba(66,220,219,.5);
+                // text-shadow: 0 0 10px rgba(255,255,255,.8), 0 0 20px rgba(255,255,255,.7), 0 0 22px rgba(255,255,255,.6), 0 0 40px
+                // rgba(66,220,219,.8), 0 0 50px rgba(66,220,219,.5);
             }
             #countdown ul li span {
                 display: block;
@@ -72,7 +74,7 @@
                 justify-content: flex-end;
                 gap: 1em;
             }
-            @media (min-width: 48em) {
+            @media(min-width: 48em) {
                 h1 {
                     font-size: 3rem;
                 }
@@ -88,10 +90,10 @@
             <div id="countdown" class="countdown">
                 <div class="countdown__header">
                     <p>
-                        <small>{{site.name}}</small>
+                        <small>{{ site.name }}</small>
                     </p>
-                    <h1>{{heroText}}</h1>
-                    <p>{{heroDescription}}</p>
+                    <h1>{{ heroText }}</h1>
+                    <p>{{ heroDescription }}</p>
                 </div>
                 <ul>
                     <li>
@@ -116,32 +118,17 @@
                     min = sec * 60,
                     hour = min * 60,
                     day = hour * 24;
-
-                const end = new Date("Oct 14, 2020 13:52:00").getTime();
-
+                const end = new Date("Sep 1, 2021 13:52:00").getTime();
                 const int = setInterval(() => {
                     const current = new Date().getTime();
                     const remaining = end - current;
-                    document
-                        .getElementById("days")
-                        .innerText = Math.floor(remaining / day);
-                    document
-                        .getElementById("hours")
-                        .innerText = Math.floor((remaining % day) / hour);
-                    document
-                        .getElementById("minutes")
-                        .innerText = Math.floor((remaining % hour) / min);
-                    document
-                        .getElementById("seconds")
-                        .innerText = Math.floor((remaining % min) / sec);
-
+                    document.getElementById("days").innerText = Math.floor(remaining / day);
+                    document.getElementById("hours").innerText = Math.floor((remaining % day) / hour);
+                    document.getElementById("minutes").innerText = Math.floor((remaining % hour) / min);
+                    document.getElementById("seconds").innerText = Math.floor((remaining % min) / sec);
                     if (remaining < 0) {
-                        document
-                            .querySelector("h1")
-                            .innerText = "We Have Arrived!";
-                        document
-                            .querySelector("p")
-                            .innerHTML = "The big day is finally here - we are live at <a href={{site.url}}>{{site.url}}<a/>";
+                        document.querySelector("h1").innerText = "We Have Arrived!";
+                        document.querySelector("p").innerHTML = "The big day is finally here - we are live at <a href= {{ site.url }}>{{ site.url }}<a/>";
                         const digit = document.querySelectorAll("span");
                         digit.forEach((digit) => {
                             digit.innerText = "0";
