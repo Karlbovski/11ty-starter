@@ -24,7 +24,7 @@ I've only added a few pre-configured elements to help me with my usual workflow.
 The project is already structured to allow localization and multilanguage features all based on [this awesome tutorial](https://www.webstoemp.com/blog/multilingual-sites-eleventy/) by [Jérôme Coupé](https://github.com/jeromecoupe).
 
 I might add more features in the future but I'll do my best to remind myself not 
-to go into the "this has to be more Generic" rabbit hole!! :rabbit face:
+to go into the "this has to be more Generic" rabbit hole!! 🐇
 
 This is a Starter!
 Each project will always have different needs.
