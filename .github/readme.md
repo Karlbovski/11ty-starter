@@ -68,7 +68,7 @@ The pipeline is taken from a very interesting article by [Craig Buckler](https:/
 
 > How to import the bundled javascript file `main.js` depends on the structure of the project.
 
-We could use reused components :
+Inside partials :
 ```html
 <footer>
     <p>
@@ -77,7 +77,7 @@ We could use reused components :
 </footer>
 <script type="module" src="/js/main.js"></script>
 ```
-Or a base layout
+Inside a base layout
 ```html
 <!DOCTYPE html>
 <html lang="{% if locale %}{{ locale }}{% else %}en{% endif %}">
