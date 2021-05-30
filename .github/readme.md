@@ -28,7 +28,7 @@ The project is already structured to allow localization and multilanguage featur
 
 ### DarkMode
 There's a ready to use implementation of a dark/light mode switch.
-It's a combination of the `prefers-color-scheme` media query called and CSS custom properies.
+It's a combination of the `prefers-color-scheme` media query and CSS custom properies.
 
 ---
 
