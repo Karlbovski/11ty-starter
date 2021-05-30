@@ -14,18 +14,18 @@
         <link href="https://fonts.googleapis.com/css2?family=Quattrocento&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{{ '/css/main.css' | url }}"/>
         <meta name="description" content="{% if metaDescription %}{{ metaDescription }}{% else %}{{ site.metaDescription }}{% endif %}">
-    <meta name="keywords" content="{% if metaKeywords %}{{ metaKeywords }}{% else %}{{ site.metaKeywords }}{% endif %}">
-    {# {% include "components/favicons.njk" %} #}
-        {# {% include "components/opengraph.njk" %} #}
+        <meta name="keywords" content="{% if metaKeywords %}{{ metaKeywords }}{% else %}{{ site.metaKeywords }}{% endif %}">
+        <script type="module" src="/js/main.js" defer></script>
+        {# {% include "partials/opengraph.njk" %} #}
+        {# {% include "partials/favicons.njk" %} #}
     </head>
     <body>
-        {# example : #}
-        {% include "components/header.njk" %}
+        {% include "partials/header.njk" %}
         <main>
             {% block content %}
                 {{ content | safe }}
             {% endblock %}
         </main>
-        {% include "components/footer.njk" %}
+        {% include "partials/footer.njk" %}
     </body>
 </html>

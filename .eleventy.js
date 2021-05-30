@@ -42,7 +42,14 @@ module.exports = function (eleventyConfig) {
     // return collection.getFilteredByGlob("src/site/blog/*.md").reverse();
     // });
 
+      eleventyConfig.addCollection("content_en", function (collection) {
+        return collection.getFilteredByGlob("./src/en/content/*.md");
+      });
+  
+
     //** additional settings here */
+
+    // Browsersync settings 
     eleventyConfig.setBrowserSyncConfig({
       notify: false,
       startPath: "/en/"
@@ -55,6 +62,6 @@ module.exports = function (eleventyConfig) {
         },
         htmlTemplateEngine : "njk",
         markdownTemplateEngine : "njk",
-        // templateFormats : ["njk", "md"], // this will break .11ty.js templates, how to add them ?
+        templateFormats : ["njk", "md", "11ty.js"]
     }
 }

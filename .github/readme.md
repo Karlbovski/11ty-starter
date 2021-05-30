@@ -19,9 +19,18 @@
 
 The most barebone setup for a **clone-init-dev** experience and **almost** zero-config approach.
 
-I've only added a few pre-configured elements to help me with my usual workflow.
+---
 
+I've only added a few pre-configured elements to help me with my usual workflow :
+
+### Multilanguage and Localization
 The project is already structured to allow localization and multilanguage features all based on [this awesome tutorial](https://www.webstoemp.com/blog/multilingual-sites-eleventy/) by [Jérôme Coupé](https://github.com/jeromecoupe).
+
+### DarkMode
+There's a ready to use implementation of a dark/light mode switch.
+It's a combination of the `prefers-color-scheme` media query called and CSS custom properies.
+
+---
 
 I might add more features in the future but I'll do my best to remind myself not 
 to go into the "this has to be more Generic" rabbit hole!! 🐇
@@ -57,6 +66,28 @@ The pipeline is taken from a very interesting article by [Craig Buckler](https:/
 
 `src/assets/js/main.js`
 
+> How to import the bundled javascript file `main.js` depends on the structure of the project.
+
+We could use reused components :
+```html
+<footer>
+    <p>
+      <small>&copy;2021-present The Web</small>
+    </p>
+</footer>
+<script type="module" src="/js/main.js"></script>
+```
+Or a base layout
+```html
+<!DOCTYPE html>
+<html lang="{% if locale %}{{ locale }}{% else %}en{% endif %}">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        ....
+        <script type="module" src="/js/main.js" defer></script>
+        ....
+```
 
 # CSS pipeline | sass/scss 
 This starter already includes a very basic `Sass/Scss` architecture that uses **modern** `Sass` **standards**. 

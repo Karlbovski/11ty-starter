@@ -83,7 +83,7 @@
                 }
             }
         </style>
-        {# {% include "components/favicons.njk" %} #}
+        {# {% include "partials/favicons.njk" %} #}
     </head>
     <body>
         <main>
@@ -128,7 +128,7 @@
                     document.getElementById("seconds").innerText = Math.floor((remaining % min) / sec);
                     if (remaining < 0) {
                         document.querySelector("h1").innerText = "We Have Arrived!";
-                        document.querySelector("p").innerHTML = "The big day is finally here - we are live at <a href= {{ site.url }}>{{ site.url }}<a/>";
+                        document.querySelector("p").innerHTML = "The big day is finally here - we are live at <a href=  {{ site.url }}>{{ site.url }}<a/>";
                         const digit = document.querySelectorAll("span");
                         digit.forEach((digit) => {
                             digit.innerText = "0";
