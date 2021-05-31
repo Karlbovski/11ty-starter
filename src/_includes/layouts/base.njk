@@ -16,8 +16,8 @@
         <meta name="description" content="{% if metaDescription %}{{ metaDescription }}{% else %}{{ site.metaDescription }}{% endif %}">
         <meta name="keywords" content="{% if metaKeywords %}{{ metaKeywords }}{% else %}{{ site.metaKeywords }}{% endif %}">
         <script type="module" src="/js/main.js" defer></script>
-        {# {% include "partials/opengraph.njk" %} #}
         {# {% include "partials/favicons.njk" %} #}
+        {% include "partials/opengraph.njk" %}
     </head>
     <body>
         {% include "partials/header.njk" %}
@@ -26,6 +26,5 @@
                 {{ content | safe }}
             {% endblock %}
         </main>
-        {% include "partials/footer.njk" %}
-    </body>
-</html>
+        {% include "partials/footer.njk" %}</body>
+</html></head></html></body></html>

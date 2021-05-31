@@ -1,6 +1,6 @@
 {
   "name": "11ty-starter",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Just what it needs to start an 11ty project.",
   "scripts": {
     "watch:sass": "sass --watch src/assets/sass:public/css",
@@ -17,6 +17,10 @@
   ],
   "author": "Stefano Giorgi",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Karlbovski/11ty-starter"
+  },
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
     "markdown-it": "^12.0.6",

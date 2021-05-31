@@ -1,0 +1,20 @@
+/* theme mixins */
+@mixin themelight {
+  --color-foreground: hsl(0, 0%, 13%);
+  --color-background: hsl(0, 0%, 93%);
+  --color-100: hsl(216, 90%, 92%);
+  --color-200: hsl(216, 93%, 84%);
+  --color-300: hsl(216, 40%, 57%);
+  --color-400: hsl(215, 30%, 40%);
+  --color-500: hsl(215, 65%, 31%);
+}
+
+@mixin themedark {
+  --color-foreground: hsl(0, 0%, 87%);
+  --color-background: hsl(214, 6%, 22%);
+  --color-100: hsl(216, 90%, 92%);
+  --color-200: hsl(216, 93%, 84%);
+  --color-300: hsl(215, 55%, 77%);
+  --color-400: hsl(215, 30%, 40%);
+  --color-500: hsl(215, 65%, 31%);
+}

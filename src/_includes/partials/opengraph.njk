@@ -1,7 +1,7 @@
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@karlbovsky"/>
-<meta name="twitter:creator" content="@karlbovsky"/>
-<meta property="og:url" content="https://www.sixteenleft.com/"/>
-<meta property="og:title" content="{%- if metaTitle -%}{{ metaTitle }}{%- else -%}Generic meta Title{%- endif -%}"/>
-<meta property="og:description" content="{%- if metaDescription -%}{{ metaDescription }}{%- else -%}Generic meta Description{%- endif -%}"/>
-{# <meta property="og:image" content='https://www.hawksworx.com/card-image/{{ page.url | kebab }}card.png' /> #}
+  <meta name="twitter:site" content="@karlbovsky"/>
+  <meta name="twitter:creator" content="@karlbovsky"/>
+  <meta property="og:url" content={{ site.url }}/>
+  <meta property="og:title" content="{%- if metaTitle -%}{{ metaTitle }}{%- else -%}{{ site.metaTitle }}{%- endif -%}"/>
+  <meta
+  property="og:description" content="{%- if metaDescription -%}{{ metaDescription }}{%- else -%}{{ site.metaDescription }}{%- endif -%}"/> {# <meta property="og:image" content='https://www.hawksworx.com/card-image/{{ page.url | kebab }}card.png' /> #}

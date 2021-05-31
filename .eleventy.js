@@ -35,6 +35,11 @@ module.exports = function (eleventyConfig) {
     //** Add filters to Nunjucks */
     eleventyConfig.addFilter("kebab", require("./src/_filters/kebab.js") );
 
+    // eleventyConfig.addNunjucksFilter("date", function (date, format, locale) {
+    //   locale = locale ? locale : "en";
+    //   moment.locale(locale);
+    //   return moment(date).format(format);
+    // });
     //** Assemble some collections */ 
 
     // eleventyConfig.addCollection("tagList", require("./src/site/_filters/getTagList.js"));

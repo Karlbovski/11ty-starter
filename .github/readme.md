@@ -1,5 +1,5 @@
 # 11ty starter  
-<small>`v1.0.2`</small>
+<small>`v1.0.3`</small>
 
 <small>dev-cycle `2021.2`</small>
 
@@ -37,13 +37,6 @@ to go into the "this has to be more Generic" rabbit hole!! 🐇
 
 This is a Starter!
 Each project will always have different needs.
-
-# Templates
-
-[11ty](https://www.11ty.dev/docs/templates/) is super-flexible and supports several templates engines. Every project can be structured based on projects needs and current mood!! :)
-
-This starter uses [`nunjucks`](https://www.11ty.dev/docs/languages/nunjucks/) for templates.
-
 
 # Javascript pipeline
 
@@ -204,6 +197,13 @@ If we want to override Bulma variables it must be done before importing Bulma!!
 Here we are importing Bulma as a whole. With a different approach we could import selectivily only the modules that we are oing to use! <small>[Read more here](https://bulma.io/documentation/customize/concepts/)</small>.
 </details>
 
+</br>
+
+# Templates
+
+[11ty](https://www.11ty.dev/docs/templates/) is super-flexible and supports several templates engines. Every project can be structured based on projects needs and current mood!! :)
+
+This starter uses [`nunjucks`](https://www.11ty.dev/docs/languages/nunjucks/) for templates.
 </br>
 
 # Usage 

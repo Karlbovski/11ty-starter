@@ -1,9 +1,9 @@
 ---
-title: "Whatever"
+title: "Dummy Content"
 layout: "layouts/base.njk"
 ---
 
-<div style="width: 64ch; margin-left: auto; margin-right: auto;">
+<div style="width: 76ch; margin-left: auto; margin-right: auto; padding: 1em;">
 
 # Dummy Content title
 
