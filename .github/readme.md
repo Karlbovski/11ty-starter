@@ -6,6 +6,7 @@
 <small>NPM Packages</small>
 ```sh
     "@11ty/eleventy": "^0.12.1",
+    "dayjs": "^1.10.5",
     "markdown-it": "^12.0.6",
     "markdown-it-emoji": "^2.0.0",
     "npm-run-all": "^4.1.5",

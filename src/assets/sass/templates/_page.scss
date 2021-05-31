@@ -1,16 +1,38 @@
 /** 
-  For test purpose only. Delete all the following when starting a new project !
+  For test purpose only. 
+  Delete all the following when starting a new project !
 */
+@use "../abstracts/mediaqueries"as *;
+
+main {
+  width: 100vw;
+  display: grid;
+  place-items: center;
+}
 
 main>div {
-  outline: 1px solid red;
+  // outline: 1px solid red;
   min-height: calc(100vh - 16em); // remove footer height
+  width: 34ch;
+  padding: 1em;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   opacity: 0;
   animation: fade-in .8s ease forwards;
+
+  @include small {
+    width: 48ch;
+  }
+
+  @include tablet {
+    width: 56ch;
+  }
+
+  @include laptop {
+    width: 74ch;
+  }
 
   ul {
     list-style: none;
@@ -41,7 +63,7 @@ header {
 footer {
   // position: fixed;
   // bottom: 0;
-  width: 100%;
+  width: 100vw;
   height: 4em;
   display: flex;
   justify-content: space-around;

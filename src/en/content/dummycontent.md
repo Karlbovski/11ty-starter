@@ -1,9 +1,10 @@
 ---
 title: "Dummy Content"
 layout: "layouts/base.njk"
+date: 1994-05-21
 ---
 
-<div style="width: 76ch; margin-left: auto; margin-right: auto; padding: 1em;">
+<div>
 
 # Dummy Content title
 

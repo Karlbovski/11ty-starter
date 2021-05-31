@@ -1,6 +1,6 @@
 module.exports = {
     buildTime: new Date(),
-    name: "www.mysite.com",
+    name: "11ty-Starter",
     metaTitle: "Global Meta Title",
     metaDescription: "Global Meta Description",
     metaKeywords: "global, meta, keywords",
@@ -8,11 +8,11 @@ module.exports = {
     baseUrl: "/",
     twitter: "@handle",
     en: {
-        metaTitle: "metaTitle in english",
+        metaTitle: "Just another 11ty-Starter",
         metaDescription: "Description in english"
     },
-    fr: {
-        metaTitle: "metaTitre en français",
-        metaDescription: "Description en français"
+    it: {
+        metaTitle: "Solo un'altro 11ty-Starter",
+        metaDescription: "Descrizione in Italiano"
     }
 };
