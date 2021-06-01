@@ -22,7 +22,7 @@ module.exports = function (eleventyConfig) {
     let markdownLib = markdownIt(options).use(markdownItEmoji);
     eleventyConfig.setLibrary("md", markdownLib);
     
-    //** static passthroughs */ 
+    //** static passthroughs */
     
     // eleventyConfig.addPassthroughCopy("./src/assets/fonts/");
     // eleventyConfig.addPassthroughCopy("./src/assets/img/");
@@ -33,13 +33,14 @@ module.exports = function (eleventyConfig) {
         // eleventyConfig.addPassthroughCopy("./src/assets/");
     */
 
-    //** Add filters to Nunjucks */
+    //** Add filters */
     eleventyConfig.addFilter("kebab", require("./src/_filters/kebab.js") );
 
     eleventyConfig.addNunjucksFilter("date", function (date, format, locale) {
       locale = locale ? locale : "en";
       return dayjs(date).locale(locale).format(format);
     });
+
     //** Assemble some collections */ 
 
     // eleventyConfig.addCollection("tagList", require("./src/site/_filters/getTagList.js"));
@@ -47,9 +48,10 @@ module.exports = function (eleventyConfig) {
     // return collection.getFilteredByGlob("src/site/blog/*.md").reverse();
     // });
 
-      eleventyConfig.addCollection("content_en", function (collection) {
-        return collection.getFilteredByGlob("./src/en/content/*.md");
-      });
+     // example english content
+      // eleventyConfig.addCollection("content_en", function (collection) {
+      //   return collection.getFilteredByGlob("./src/content/en/*//*.md");
+      // });
   
 
     //** additional settings here */
@@ -57,7 +59,7 @@ module.exports = function (eleventyConfig) {
     // Browsersync settings 
     eleventyConfig.setBrowserSyncConfig({
       notify: false,
-      startPath: "/en/"
+      startPath: "/"
     });
 
     return {

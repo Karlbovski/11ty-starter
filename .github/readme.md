@@ -25,7 +25,18 @@ The most barebone setup for a **clone-init-dev** experience and **almost** zero-
 I've only added a few pre-configured elements to help me with my usual workflow :
 
 ### Multilanguage and Localization
-The project is already structured to allow localization and multilanguage features all based on [this awesome tutorial](https://www.webstoemp.com/blog/multilingual-sites-eleventy/) by [Jérôme Coupé](https://github.com/jeromecoupe).
+The project is already structured to allow localization and multilanguage features (no implementation).
+
+Follow [this awesome tutorial](https://www.webstoemp.com/blog/multilingual-sites-eleventy/) by [Jérôme Coupé](https://github.com/jeromecoupe) on how we could implement those features.
+
+Even if we are not implementing any multilanguage or localization feature, this starter requires each page/layout to have the keyword `locale` set in its frontmatter.
+```yml
+<- index.njk ->
+---
+permalink: index.html
+locale: "en"
+---
+```
 
 ### DarkMode
 There's a ready to use implementation of a dark/light mode switch.

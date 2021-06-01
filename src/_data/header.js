@@ -2,11 +2,11 @@ module.exports = {
   en: [
       {
         label: "Home", 
-        url: "/en/"
+        url: "/"
       },
       {
         label: "About", 
-        url: "/en/about.html"
+        url: "/about/index.html"
       }
   ]
 }

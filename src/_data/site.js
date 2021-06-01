@@ -10,9 +10,5 @@ module.exports = {
     en: {
         metaTitle: "Just another 11ty-Starter",
         metaDescription: "Description in english"
-    },
-    it: {
-        metaTitle: "Solo un'altro 11ty-Starter",
-        metaDescription: "Descrizione in Italiano"
     }
 };
