@@ -12,6 +12,9 @@ locale: "en"
 {% block content %}
  <div>
    <h1>{{metaTitle}}</h1>
+   <p>
+    <time datetime="{{ page.date | date('YYYY-MM-DD') }}">{{ page.date | date('YYYY-MM-DD') }}</time>
+  </p>
  </div>
 {% endblock %}
 

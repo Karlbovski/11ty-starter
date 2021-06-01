@@ -36,9 +36,15 @@ module.exports = function (eleventyConfig) {
     //** Add filters */
     eleventyConfig.addFilter("kebab", require("./src/_filters/kebab.js") );
 
+    // date using dayjs
     eleventyConfig.addNunjucksFilter("date", function (date, format, locale) {
       locale = locale ? locale : "en";
       return dayjs(date).locale(locale).format(format);
+    });
+    // excerpts by words 
+    eleventyConfig.addFilter("excerpt", (post) => {
+      const content = post.replace(/(<([^>]+)>)/gi, "");
+      return content.substr(0, content.lastIndexOf(" ", 200)) + "...";
     });
 
     //** Assemble some collections */ 

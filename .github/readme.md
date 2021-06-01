@@ -42,6 +42,26 @@ locale: "en"
 There's a ready to use implementation of a dark/light mode switch.
 It's a combination of the `prefers-color-scheme` media query and CSS custom properies.
 
+## Filters
+### Date
+Use [dayjs](https://day.js.org/en/) to handle date-time stuff.
+```html
+<- Usage Example - Nunjucks ->
+...
+<time>{{ post.date | date('YYYY-MM-DD') }}"</time>
+...
+```
+### Excerpts
+Create an excerpt of custom lenght.
+```html
+  <- Usage Example Nunjucks ->
+  ...
+  {% if post.templateContent %}
+  <p><small>{{ post.templateContent | excerpt }}</small></p>
+  {% endif %}
+  ...
+```
+
 ---
 
 I might add more features in the future but I'll do my best to remind myself not 
@@ -239,11 +259,17 @@ This starter uses [`nunjucks`](https://www.11ty.dev/docs/languages/nunjucks/) fo
 
 <br>
 
+### 11ty Reminders
+
+1. In Eleventy, `tags` are used to **construct collections of content**. In WordPress, `tags` are just a type of **taxonomy** with no hierarchy.
+
+<br>
+
 ### TODO Next
-- Multilingual out of the box - IN PROGRESS
-- More clear rules about Permalinks - IN PROGRESS
+
 - how to implement Bulma or other third-party framework with Dart Sass (@use and @forward).
 - ~~sass migration - remove @imports where possible. Replace with @use and @forward~~
 - Test Connect to Netlify
     - Netlify CLI&UI environments setup
+
 
