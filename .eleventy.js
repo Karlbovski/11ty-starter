@@ -1,80 +1,83 @@
-const dayjs = require('dayjs');
+const filters = require('./utils/filters.js')
+
 // 11ty configuration
 const
-  dev = global.dev  = (process.env.ELEVENTY_ENV === 'development'),
+  dev = global.dev = (process.env.ELEVENTY_ENV === 'development'),
   now = new Date();
 
 module.exports = function (eleventyConfig) {
 
-    //** build pipeline */
-    eleventyConfig.addWatchTarget("./src/assets/sass/");
-    eleventyConfig.addWatchTarget('./src/js/');
+  /** 
+   * watch for build pipeline
+   **/
+  eleventyConfig.addWatchTarget("./src/assets/sass/");
+  eleventyConfig.addWatchTarget('./src/js/');
 
-    //** libraries and plugins */
-    let markdownIt = require("markdown-it");
-    let markdownItEmoji = require("markdown-it-emoji");
-    let options = {
-      html: true,
-      breaks: true,
-      linkify: true
-    };
-    
-    let markdownLib = markdownIt(options).use(markdownItEmoji);
-    eleventyConfig.setLibrary("md", markdownLib);
-    
-    //** static passthroughs */
-    
-    // eleventyConfig.addPassthroughCopy("./src/assets/fonts/");
-    // eleventyConfig.addPassthroughCopy("./src/assets/img/");
-    /**
-        if no assets pipeline or build tools, we 
-        could pass through the entire asset folder :
+  /** 
+   * LIBRARIES and PLUGINS 
+   **/
+  let markdownIt = require("markdown-it");
+  let markdownItEmoji = require("markdown-it-emoji");
+  let options = {
+    html: true,
+    breaks: true,
+    linkify: true
+  };
 
-        // eleventyConfig.addPassthroughCopy("./src/assets/");
-    */
+  let markdownLib = markdownIt(options).use(markdownItEmoji);
+  eleventyConfig.setLibrary("md", markdownLib);
 
-    //** Add filters */
-    eleventyConfig.addFilter("kebab", require("./src/_filters/kebab.js") );
+  /**
+   * Static passthroughs
+   **/
 
-    // date using dayjs
-    eleventyConfig.addNunjucksFilter("date", function (date, format, locale) {
-      locale = locale ? locale : "en";
-      return dayjs(date).locale(locale).format(format);
-    });
-    // excerpts by words 
-    eleventyConfig.addFilter("excerpt", (post) => {
-      const content = post.replace(/(<([^>]+)>)/gi, "");
-      return content.substr(0, content.lastIndexOf(" ", 200)) + "...";
-    });
+  // eleventyConfig.addPassthroughCopy("./src/assets/fonts/");
+  // eleventyConfig.addPassthroughCopy("./src/assets/img/");
+  /**
+      if no assets pipeline or build tools, we 
+      could pass through the entire asset folder :
 
-    //** Assemble some collections */ 
+      // eleventyConfig.addPassthroughCopy("./src/assets/");
+  */
 
-    // eleventyConfig.addCollection("tagList", require("./src/site/_filters/getTagList.js"));
-    // eleventyConfig.addCollection("posts", function(collection) {
-    // return collection.getFilteredByGlob("src/site/blog/*.md").reverse();
-    // });
+  // Filters
+  Object.keys(filters).forEach((filterName) => {
+    eleventyConfig.addFilter(filterName, filters[filterName])
+  })
 
-     // example english content
-      // eleventyConfig.addCollection("content_en", function (collection) {
-      //   return collection.getFilteredByGlob("./src/content/en/*//*.md");
-      // });
-  
+  // Collections
 
-    //** additional settings here */
+  // eleventyConfig.addCollection("tagList", require("./src/site/_filters/getTagList.js"));
+  // eleventyConfig.addCollection("posts", function(collection) {
+  // return collection.getFilteredByGlob("src/site/blog/*.md").reverse();
+  // });
 
-    // Browsersync settings 
-    eleventyConfig.setBrowserSyncConfig({
-      notify: false,
-      startPath: "/"
-    });
+  // example english content
+  // eleventyConfig.addCollection("content_en", function (collection) {
+  //   return collection.getFilteredByGlob("./src/content/en/*//*.md");
+  // });
 
-    return {
-        dir: {
-            input: "src",
-            output: "public"
-        },
-        htmlTemplateEngine : "njk",
-        markdownTemplateEngine : "njk",
-        templateFormats : ["njk", "md", "11ty.js"]
-    }
+
+  /** 
+   * additional settings here
+   **/
+
+  /** 
+   * Browsersync settings
+   **/
+
+  eleventyConfig.setBrowserSyncConfig({
+    notify: false,
+    startPath: "/"
+  });
+
+  return {
+    dir: {
+      input: "src",
+      output: "public"
+    },
+    htmlTemplateEngine: "njk",
+    markdownTemplateEngine: "njk",
+    templateFormats: ["njk", "md", "11ty.js"]
+  }
 }

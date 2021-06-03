@@ -13,8 +13,12 @@ locale: "en"
  <div>
    <h1>{{metaTitle}}</h1>
    <p>
-    <time datetime="{{ page.date | date('YYYY-MM-DD') }}">{{ page.date | date('YYYY-MM-DD') }}</time>
+    <time datetime="{{ page.date | dateToFormat('YYYY-MM-DD') }}">{{ page.date | dateToFormat('YYYY-MM-DD') }}</time>
   </p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Pariatur laudantium architecto modi, est eius aliquam! 
+  </p>
+  <p>{{ page.outputPath | kebab }}</p>
  </div>
 {% endblock %}
 
