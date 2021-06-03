@@ -16,7 +16,7 @@
 ```
 :construction: :construction: :construction: :construction:
 
-# Nothing fancy here, just a very simple starter for [11ty](https://www.11ty.dev/) projects.
+# Nothing fancy here, just a very simple starter for my [11ty](https://www.11ty.dev/) projects.
 
 The most barebone setup for a **clone-init-dev** experience and **almost** zero-config approach.
 
