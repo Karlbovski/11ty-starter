@@ -84,7 +84,7 @@ For example Client-side JavaScript could be handled with a **transform**, but **
 
 Menawhile read this :
     
-[Asset Pipelines in Eleventy by Max Böck]("https://mxb.dev/blog/eleventy-asset-pipeline/")
+[Asset Pipelines in Eleventy by Max Böck](https://mxb.dev/blog/eleventy-asset-pipeline/)
 
 ## Don't be Me
 Enable `.11ty.js` templates in your config :
