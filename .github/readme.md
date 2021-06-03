@@ -16,7 +16,7 @@
 ```
 :construction: :construction: :construction: :construction:
 
-## Nothing fancy here, just a very simple starter for [11ty](https://www.11ty.dev/) projects.
+# Nothing fancy here, just a very simple starter for [11ty](https://www.11ty.dev/) projects.
 
 The most barebone setup for a **clone-init-dev** experience and **almost** zero-config approach.
 
@@ -24,7 +24,7 @@ The most barebone setup for a **clone-init-dev** experience and **almost** zero-
 
 I've only added a few pre-configured elements to help me with my usual workflow :
 
-### Multilanguage and Localization
+## Multilanguage and Localization
 The project is already structured to allow localization and multilanguage features (no implementation).
 
 Follow [this awesome tutorial](https://www.webstoemp.com/blog/multilingual-sites-eleventy/) by [Jérôme Coupé](https://github.com/jeromecoupe) on how we could implement those features.
@@ -38,11 +38,15 @@ locale: "en"
 ---
 ```
 
-### DarkMode
+## DarkMode
 There's a ready to use implementation of a dark/light mode switch.
 It's a combination of the `prefers-color-scheme` media query and CSS custom properies.
 
 ## Filters
+Filters are served from dedicated files and imported using `.eleventy.js` config file. I prefer this way of doing it but as always in **11ty** we can mix and match the ways we do our thing.
+
+##  Included Filters Usage
+
 ### Date
 Use [dayjs](https://day.js.org/en/) to handle date-time stuff.
 ```html
@@ -67,33 +71,137 @@ Create an excerpt of custom lenght.
 I might add more features in the future but I'll do my best to remind myself not 
 to go into the "this has to be more Generic" rabbit hole!! 🐇
 
-This is a Starter!
-Each project will always have different needs.
+... 
+This is a Starter! This is a Starter! This is a Starter! This is a Starter! 
+...
 
 # Javascript pipeline
+> _...11ty has no standardized way of handling assets...it gives you the flexibility to handle this any way you want, rather than forcing an opinionated way of doing things on you that might not fit your specific needs._
 
-Modular approach. All modules bundled and minified at build-time using:
+For example Client-side JavaScript could be handled with a **transform**, but **JavaScript** templates named <something>.`11ty.js` are also an option because they’re automatically processed by **Eleventy**.
 
+# Let 11ty do the thing
+
+> _I'm moving this project towards a fully-integrated way of doing things. std-by..._
+
+Menawhile read this :
+[Asset Pipelines in Eleventy by Max Böck]("https://mxb.dev/blog/eleventy-asset-pipeline/")
+
+## Don't be Me
+Enable `.11ty.js` templates in your config :
+
+<small>.eleventy.js</small>
+```js
+...
+  return {
+    dir: {
+      input: "src",
+      output: "public"
+    },
+    htmlTemplateEngine: "njk",
+    markdownTemplateEngine: "njk",
+    // Specify which types of templates should be transformed.
+    templateFormats: ["html", "njk", "md", "11ty.js"]
+  }
+...
+```
+
+## Eleventy - Includes with filters
+This is an example of approach that is fully integrated with **11ty** pipeline and it's **implemented in this starter**.
+
+We have our **modules** inside the default `_includes` folder.
+
+```sh
+├─ src/
+│  ├─ _includes/
+│  │  ├─ js/
+│  │  │  ├─ dom.js
+│  │  │  ├─ theme.js
+├─ 
+```
+Then we add a global **filter** inside the **eleventy** config file :
+
+<small>.eleventy.js</small>
+```js
+...
+  // compress and combine js files
+  eleventyConfig.addFilter("jsmin", function (code) {
+    const UglifyJS = require("uglify-js");
+    let minified = UglifyJS.minify(code);
+    if (minified.error) {
+      console.log("UglifyJS error: ", minified.error);
+      return code;
+    }
+    return minified.code;
+  });
+...
+```
+Now we can add our **Client-side Javascript** in ours templates.
+
+<small>Nunjucks Example. File :  `footer.njk`</small>
+```html
+<footer>
+  <p>
+    <small>&copy;2021-present The Web</small>
+  </p>
+</footer>
+{% set js %}
+  {% include "js/dom.js" %} 
+  {% include "js/theme.js" %} 
+  {% include "js/btn-log.js" %}
+{% endset %}
+<script type="text/javascript">{{ js | jsmin | safe }}</script>
+```
+> _If we keep all the above small and we use filters to integrate further functionalities, this is a very flexible and intuitive approach. I'm using it more and more often._
+
+## External Modular approach
+
+This pipeline is taken from an article by [Craig Buckler](https://www.sitepoint.com/author/craig-buckler) on Sitepoint : [ Getting Started with 11ty](https://www.sitepoint.com/getting-started-with-eleventy/). 
+
+<small>All modules are bundled and minified at build-time using: </small>
 ```sh
 "rollup": "^2.36.1",
 "rollup-plugin-terser": "^7.0.2",
 ```
-The pipeline is taken from a very interesting article by [Craig Buckler](https://www.sitepoint.com/author/craig-buckler) on Sitepoint > [ Getting Started with 11ty](https://www.sitepoint.com/getting-started-with-eleventy/)
 
-> Client-side JavaScript could be handled with a    **transform**, but **JavaScript** templates named <something>.`11ty.js` are also an option because they’re automatically processed by **Eleventy**. The example code provides **ES6** scripts to implement simple *dark/light* theme switching. **Rollup.js** is used to bundle all modules referenced by `main.js` into a single file and perform tree-shaking to remove any unused functions. The `terser` plugin then minifies the resulting code.
+**Rollup.js** is used to bundle all modules referenced by `main.js` into a single file and perform tree-shaking to remove any unused functions. 
 
-### JS Module | Example
-`src/assets/js/modules/dom.js`
+The **terser** plugin then minifies the resulting code.
 
-`src/assets/js/modules/theme.js`
+> **Create** the `js` folder and files using this structure :
+```
+├─ src/
+│  ├─ js/
+│  │  ├─ modules/
+│  │  │  ├─ theme.js
+│  │  ├─ javascript.11ty.js
+│  │  ├─ main.js
+│  
+├─ utils/
+├─ .eleventy.js
+...
+```
 
-`src/assets/js/javascript.11ty.js`
+Almost everything happens inside the `js` folder.
 
-`src/assets/js/main.js`
+> (_If not done yet_) **Create** `javascript.11ty.js` inside the `src/js` folder
+
+> **Copy** [this code javascript.11ty.js](https://gist.github.com/Karlbovski/dfa1bab2cb8479b7d6bf33e827ce6e94) inside `javascript.11ty.js` file. 
+
+The template will do the rest.
+
+We use the `main.js` file to import modules we want to include in our bundle :
+
+<small>main.js</small>
+```js
+import * as theme from './modules/theme.js';
+```
+
+We end up with a file called `main.js` (default permalink `js/main.js`).
 
 > How to import the bundled javascript file `main.js` depends on the structure of the project.
 
-Inside partials :
+<small>Example Inside partials :</small>
 ```html
 <footer>
     <p>
@@ -102,17 +210,12 @@ Inside partials :
 </footer>
 <script type="module" src="/js/main.js"></script>
 ```
-Inside a base layout
-```html
-<!DOCTYPE html>
-<html lang="{% if locale %}{{ locale }}{% else %}en{% endif %}">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        ....
-        <script type="module" src="/js/main.js" defer></script>
-        ....
-```
+
+### NOTE 
+
+If we don't plan to use this method at all, we can remove the `src/js` folder!
+
+</br>
 
 # CSS pipeline | sass/scss 
 This starter already includes a very basic `Sass/Scss` architecture that uses **modern** `Sass` **standards**. 
@@ -266,7 +369,8 @@ This starter uses [`nunjucks`](https://www.11ty.dev/docs/languages/nunjucks/) fo
 <br>
 
 ### TODO Next
-
+- implement js with includes and set in templates
+  - Add jsmin global filter 
 - how to implement Bulma or other third-party framework with Dart Sass (@use and @forward).
 - ~~sass migration - remove @imports where possible. Replace with @use and @forward~~
 - Test Connect to Netlify
