@@ -83,6 +83,7 @@ For example Client-side JavaScript could be handled with a **transform**, but **
 > _I'm moving this project towards a fully-integrated way of doing things. std-by..._
 
 Menawhile read this :
+    
 [Asset Pipelines in Eleventy by Max Böck]("https://mxb.dev/blog/eleventy-asset-pipeline/")
 
 ## Don't be Me
