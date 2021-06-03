@@ -209,11 +209,7 @@ We end up with a file called `main.js` (default permalink `js/main.js`).
 </footer>
 <script type="module" src="/js/main.js"></script>
 ```
-
-### NOTE 
-
-If we don't plan to use this method at all, we can remove the `src/js` folder!
-
+    
 </br>
 
 # CSS pipeline | sass/scss 
