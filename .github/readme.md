@@ -167,7 +167,7 @@ This pipeline is taken from an article by [Craig Buckler](https://www.sitepoint.
 
 The **terser** plugin then minifies the resulting code.
 
-> `**Create**` the `js` folder and files using this structure :
+> `Create` the `js` folder and files using this structure :
 ```
 ├─ src/
 │  ├─ js/
@@ -183,9 +183,9 @@ The **terser** plugin then minifies the resulting code.
 
 Almost everything happens inside the `js` folder.
 
-> (_If not done yet_) **Create** `javascript.11ty.js` inside the `src/js` folder
+> `Create`  (_If not done yet_) `javascript.11ty.js` inside the `src/js` folder
 
-> **Copy** [this code javascript.11ty.js](https://gist.github.com/Karlbovski/dfa1bab2cb8479b7d6bf33e827ce6e94) inside `javascript.11ty.js` file. 
+> `Copy` [this code](https://gist.github.com/Karlbovski/dfa1bab2cb8479b7d6bf33e827ce6e94) inside `javascript.11ty.js` file. 
 
 The template will do the rest.
 
