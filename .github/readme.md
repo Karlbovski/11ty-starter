@@ -167,7 +167,7 @@ This pipeline is taken from an article by [Craig Buckler](https://www.sitepoint.
 
 The **terser** plugin then minifies the resulting code.
 
-> **Create** the `js` folder and files using this structure :
+> `**Create**` the `js` folder and files using this structure :
 ```
 ├─ src/
 │  ├─ js/
