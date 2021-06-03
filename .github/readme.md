@@ -20,8 +20,6 @@
 
 The most barebone setup for a **clone-init-dev** experience and **almost** zero-config approach.
 
----
-
 I've only added a few pre-configured elements to help me with my usual workflow :
 
 ## Multilanguage and Localization
