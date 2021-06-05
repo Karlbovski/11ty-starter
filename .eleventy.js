@@ -8,7 +8,7 @@ const
 module.exports = function (eleventyConfig) {
 
   /** 
-   * watch for build pipeline
+   * watch targets for build pipeline
    **/
   eleventyConfig.addWatchTarget("./src/assets/sass/");
   eleventyConfig.addWatchTarget('./src/js/');
@@ -45,17 +45,9 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addFilter(filterName, filters[filterName])
   })
 
-  // Collections
-
-  // eleventyConfig.addCollection("tagList", require("./src/site/_filters/getTagList.js"));
-  // eleventyConfig.addCollection("posts", function(collection) {
-  // return collection.getFilteredByGlob("src/site/blog/*.md").reverse();
-  // });
-
-  // example english content
-  // eleventyConfig.addCollection("content_en", function (collection) {
-  //   return collection.getFilteredByGlob("./src/content/en/*//*.md");
-  // });
+  /** 
+   * add Collections 
+   **/
 
 
   /** 
