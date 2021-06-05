@@ -162,6 +162,15 @@ This pipeline is taken from an article by [Craig Buckler](https://www.sitepoint.
 "rollup": "^2.36.1",
 "rollup-plugin-terser": "^7.0.2",
 ```
+### Implementation
+
+```sh 
+npm install rollup
+```
+
+```sh 
+npm install rollup-plugin-terser
+```
 
 **Rollup.js** is used to bundle all modules referenced by `main.js` into a single file and perform tree-shaking to remove any unused functions. 
 

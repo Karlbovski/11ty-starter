@@ -4,8 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## TIP
-### Generate a quick changelog from git commits ;)
+### QuickTip - Generate a quick changelog from git commits ;)
 ```sh
 git log --pretty="- %s" > CHANGELOG.md
 ```
@@ -26,7 +25,7 @@ _Track upcoming changes_
   - docs -> todo
 - How to? Implement 3rd party CSS framework/libraries
   -  Implement Bulma or other third-party framework with Dart Sass (`@use` and `@forward`).
----
+
 ## [0.0.6] <small> Jun 5, 2021</small>
 
 ### Added 
@@ -48,11 +47,18 @@ _Track upcoming changes_
 <small>`(now removed features)`</small>
 
 - JS bundle implementation solution was removed but still implementable if needed. [See readme file](.github/readme.md).
+- npm package `rollup`
+- npm package `rollup-plugin-terser`
 
 ### Fixed 
 <small>`(any bug fixes)`</small>
 
+### Known Issues 
+<small>`(aware they are in this release)`</small>
+
 ### Security 
 <small>`(in case of vulnerabilities)`</small>
+
+- `npm audit` > 3 moderate severity vulnerabilities in 426 scanned packages
 
 ---
