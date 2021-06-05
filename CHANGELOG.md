@@ -46,7 +46,7 @@ _Track upcoming changes_
 ### Removed 
 <small>`(now removed features)`</small>
 
-- JS bundle implementation solution was removed but still implementable if needed. [See readme file](./readme.md).
+- JS bundle implementation solution was removed but still implementable if needed. [See readme file](.github/readme.md).
 - npm package `rollup`
 - npm package `rollup-plugin-terser`
 

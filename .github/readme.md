@@ -372,17 +372,4 @@ This starter uses [`nunjucks`](https://www.11ty.dev/docs/languages/nunjucks/) fo
 
 <br>
 
-### TODO Next
-
-- Expose Javascript Global functions
-  - [docs](https://www.11ty.dev/docs/languages/javascript/#javascript-template-functions)
-- abstract too specific functionalities into Plugins
-  - docs -> todo
-- how to implement Bulma or other third-party framework with Dart Sass (@use and @forward).
-- ~~implement js with includes and set in templates~~
-  - ~~Add jsmin global filter~~
-- ~~sass migration - remove @imports where possible. Replace with @use and @forward~~
-- Test Connect to Netlify
-    - Netlify CLI&UI environments setup
-
 
