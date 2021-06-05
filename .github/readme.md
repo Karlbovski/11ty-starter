@@ -1,5 +1,5 @@
 # 11ty starter  
-<small>`v1.0.4`</small>
+<small>`v0.0.6`</small>
 
 <small>dev-cycle `2021.2`</small>
 
