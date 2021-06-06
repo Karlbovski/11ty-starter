@@ -1,24 +1,15 @@
 ---
 permalink: index.html
-locale: "en"
 ---
 
-{% extends "layouts/base.njk" %}
-
-{% set metaTitle = site[locale].metaTitle %}
-{% set metaDescription = site[locale].metaDescription %}
-{% set metaImage = site[locale].metaImage %}
+{% extends "layouts/base-locales.njk" %}
 
 {% block content %}
- <div>
+ <div>  
    <h1>{{metaTitle}}</h1>
-   <p>
+   <p> started : 
     <time datetime="{{ page.date | dateToFormat('YYYY-MM-DD') }}">{{ page.date | dateToFormat('YYYY-MM-DD') }}</time>
   </p>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-    Pariatur laudantium architecto modi, est eius aliquam! 
-  </p>
-  <p>{{ page.outputPath | kebab }}</p>
  </div>
 {% endblock %}
 

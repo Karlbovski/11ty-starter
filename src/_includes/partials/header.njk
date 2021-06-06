@@ -1,6 +1,16 @@
 <header>
-  {% for navItem in header[locale] %}
-    <a href="{{ navItem.url }}">{{ navItem.label }}</a>
+  {% for language in locales %}
+    {% if locale and locale === language.locale %}
+      {% for navItem in language.navItems %}
+        <a href="{{ navItem.url }}">{{ navItem.label }}</a>
+      {% endfor %}
+    {% else %}
+      {% if language.default %}
+        {% for navItem in language.navItems %}
+          <a href="{{ navItem.url }}">{{ navItem.label }}</a>
+        {% endfor %}
+      {% endif %}
+    {% endif %}
   {% endfor %}
   <button id="themetoggle" class="btn-log">12345-theme</button>
 </header>

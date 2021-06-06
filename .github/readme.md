@@ -21,11 +21,46 @@ The most barebone setup for a **clone-init-dev** experience and **almost** zero-
 I've only added a few pre-configured elements to help me with my usual workflow :
 
 ## Multilanguage and Localization
-The project is already structured to allow localization and multilanguage features (no implementation).
+The starter is already structured to allow localization and multilanguage features.
 
-Follow [this awesome tutorial](https://www.webstoemp.com/blog/multilingual-sites-eleventy/) by [Jérôme Coupé](https://github.com/jeromecoupe) on how we could implement those features.
+[This awesome tutorial](https://www.webstoemp.com/blog/multilingual-sites-eleventy/) by [Jérôme Coupé](https://github.com/jeromecoupe) shows a clever approach to implement those features.
 
-Even if we are not implementing any multilanguage or localization feature, this starter requires each page/layout to have the keyword `locale` set in its frontmatter.
+This starter just contains a data template called `[locales]` in which we can include every aspect related with localization.
+
+> `_data/locales.js`
+```js
+module.exports = [{
+    label: "english",
+    locale: "en",
+    default: true,
+    header: "Content in",
+    metaTitle: "Just another 11ty-Starter",
+    metaDescription: "Description in english",
+    navItems: [{
+        label: "Home",
+        url: "/"
+      },
+      {
+        label: "About",
+        url: "/about/index.html"
+      }
+    ]
+  },
+  {
+    label: "français",
+    locale: "fr",
+    header: "Contenu en",
+    metaTitle: "Title in Français",
+    metaDescription: "Description in français"
+  },
+  ...
+```
+
+This could be useful in many ways.
+
+For example it allows to set variables into templates based on the current page locale.
+
+If we set the **frontmatter key** `locale`
 ```yml
 <- index.njk ->
 ---
@@ -33,6 +68,38 @@ permalink: index.html
 locale: "en"
 ---
 ```
+We have a connection between the **layouts** and the **data-template** `locales`.
+
+In a layout we could then iterate the data-template `locales` to look for a match with the **layout** `locale` key in its frontmatter :
+
+```html
+{% for language in locales %}
+  {% if locale and locale === language.locale %}
+    {% set metaTitle = language.metaTitle %}
+    {% set metaDescription = language.metaDescription %}
+    # { _do more awesome stuff_ } #
+  {% endif %}
+{% endfor %}
+``` 
+Or set our navigation items to match with the current language parameters :
+```html
+<header>
+  {% for language in locales %}
+    {% if locale and locale === language.locale %}
+      {% for navItem in language.navItems %}
+        <a href="{{ navItem.url }}">{{ navItem.label }}</a>
+      {% endfor %}
+    {% else %}
+      {% if language.default %}
+        {% for navItem in language.navItems %}
+          <a href="{{ navItem.url }}">{{ navItem.label }}</a>
+        {% endfor %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+</header>
+```
+> Note : It's not mandatory to set a `locale` in a page frontmatter. <br> If a page has no `locale` specified in its frontmatter, we could pick one from `locales.js` that has the `default` parameter set or just do nothing and let the `base.njk` template to fallback to global values.<br> **In a nutshell**, the `locales.js` data is there if we want to use it, otherwise we opt-out and do the whole thing in another way. **11ty** super-powers!
 
 ## DarkMode
 There's a ready to use implementation of a dark/light mode switch.
@@ -344,7 +411,7 @@ This starter uses [`nunjucks`](https://www.11ty.dev/docs/languages/nunjucks/) fo
 </br>
 
 # Usage 
-- Clone or Download this repo into a new project folder.
+- Download this repository
 - `npm install`
 - (recommended) run `npm outdated` - `npm audit`
 - `npm run dev` or `npm run build`

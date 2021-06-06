@@ -1,8 +1,14 @@
 <footer>
   <div>
-    <p>{{ footer[locale].addressTitle }}</p>
-    <p>{{ footer[locale].addressStreet }}, {{ footer[locale].addressNumber }}</p>
-    <p>{{ footer[locale].addressPostcode }}, {{ footer[locale].addressCity }}</p>
+    {% if locale %}
+      <p>{{ footer[locale].addressTitle }}</p>
+      <p>{{ footer[locale].addressStreet }}, {{ footer[locale].addressNumber }}</p>
+      <p>{{ footer[locale].addressPostcode }}, {{ footer[locale].addressCity }}</p>
+    {% else %}
+      <p>{{ locales[0].header }}
+        {{ locales[0].label }}</p>
+      <p>{{ locales[0].metaDescription }}</p>
+    {% endif %}
   </div>
   <p>
     <small>&copy;2021-present The Web</small>

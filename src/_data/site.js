@@ -7,8 +7,4 @@ module.exports = {
     url: "https://www.mysite.com",
     baseUrl: "/",
     twitter: "@handle",
-    en: {
-        metaTitle: "Just another 11ty-Starter",
-        metaDescription: "Description in english"
-    }
 };
