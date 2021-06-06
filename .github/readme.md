@@ -27,7 +27,7 @@ The starter is already structured to allow localization and multilanguage featur
 
 This starter just contains a data template called `[locales]` in which we can include every aspect related with localization.
 
-> `_data/locales.js`
+<small>`_data/locales.js`</small>
 ```js
 module.exports = [{
     label: "english",
@@ -60,7 +60,7 @@ This could be useful in many ways.
 
 For example it allows to set variables into templates based on the current page locale.
 
-If we set the **frontmatter key** `locale`
+If we set the **frontmatter key** `locale` in a layout
 ```yml
 <- index.njk ->
 ---
@@ -70,9 +70,9 @@ locale: "en"
 ```
 We have a connection between the **layouts** and the **data-template** `locales`.
 
-In a layout we could then iterate the data-template `locales` to look for a match with the **layout** `locale` key in its frontmatter :
+We could then iterate the data-template `locales` to look for a match with the **layout** `locale` key in its frontmatter :
 
-```html
+```sh
 {% for language in locales %}
   {% if locale and locale === language.locale %}
     {% set metaTitle = language.metaTitle %}
@@ -81,8 +81,8 @@ In a layout we could then iterate the data-template `locales` to look for a matc
   {% endif %}
 {% endfor %}
 ``` 
-Or set our navigation items to match with the current language parameters :
-```html
+Or set our navigation items to match the current language :
+```sh
 <header>
   {% for language in locales %}
     {% if locale and locale === language.locale %}
@@ -99,7 +99,11 @@ Or set our navigation items to match with the current language parameters :
   {% endfor %}
 </header>
 ```
-> Note : It's not mandatory to set a `locale` in a page frontmatter. <br> If a page has no `locale` specified in its frontmatter, we could pick one from `locales.js` that has the `default` parameter set or just do nothing and let the `base.njk` template to fallback to global values.<br> **In a nutshell**, the `locales.js` data is there if we want to use it, otherwise we opt-out and do the whole thing in another way. **11ty** super-powers!
+> note<br>It's not mandatory to set a `locale` in a page frontmatter.
+
+>**In a nutshell** <br>The `locales.js` data template is there if we want to use it, otherwise we opt-out and do the whole thing in another way. **11ty** super-powers!
+
+><b>tl;dr</b><br>If a page has no `locale` specified in its frontmatter, we could pick one from `locales.js` that has the `default` parameter set or just do nothing and let the `base.njk` template to fallback to global values.<br> 
 
 ## DarkMode
 There's a ready to use implementation of a dark/light mode switch.
@@ -108,8 +112,15 @@ It's a combination of the `prefers-color-scheme` media query and CSS custom prop
 ## Filters
 Filters are served from dedicated files and imported using `.eleventy.js` config file. I prefer this way of doing it but as always in **11ty** we can mix and match the ways we do our thing.
 
-##  Included Filters Usage
+## Courtesy Page
+<small>_layout_ : `courtesy.njk`</small>
 
+<small>_data-template_ : `courtesy.md`</small>
+
+Template for a courtesy page that allows to set it's parameters with countdown feature. Perfect for a redirect during maintenance!!
+
+##  Included Filters Usage
+<small>in `utils/filters.js`</small>
 ### Date
 Use [dayjs](https://day.js.org/en/) to handle date-time stuff.
 ```html
@@ -126,6 +137,19 @@ Create an excerpt of custom lenght.
   {% if post.templateContent %}
   <p><small>{{ post.templateContent | excerpt }}</small></p>
   {% endif %}
+  ...
+```
+### jsmin
+Compress and combine js files
+```html
+  <- Usage Example Nunjucks ->
+  ...
+  {% set js %}
+    {% include "js/dom.js" %}
+    {% include "js/darkmode.js" %}
+    {% include "js/btnLog.js" %}
+  {% endset %}
+  <script type="text/javascript">{{ js | jsmin | safe }}</script>
   ...
 ```
 
@@ -151,10 +175,10 @@ Menawhile read this :
     
 [Asset Pipelines in Eleventy by Max Böck](https://mxb.dev/blog/eleventy-asset-pipeline/)
 
-## Don't be Me
+## Don't be Me!
 Enable `.11ty.js` templates in your config :
 
-<small>.eleventy.js</small>
+<small>`.eleventy.js`</small>
 ```js
 ...
   return {
@@ -185,7 +209,7 @@ We have our **modules** inside the default `_includes` folder.
 ```
 Then we add a global **filter** inside the **eleventy** config file :
 
-<small>.eleventy.js</small>
+<small>`.eleventy.js`</small>
 ```js
 ...
   // compress and combine js files
@@ -265,7 +289,7 @@ The template will do the rest.
 
 We use the `main.js` file to import modules we want to include in our bundle :
 
-<small>main.js</small>
+<small>`main.js`</small>
 ```js
 import * as theme from './modules/theme.js';
 ```
