@@ -17,7 +17,7 @@
 {# <script type="module" src="/js/main.js"></script> #}
 {% set js %}
 {% include "js/dom.js" %}
+{% include "js/core.js" %}
 {% include "js/darkmode.js" %}
-{% include "js/btnLog.js" %}
 {% endset %}
 <script type="text/javascript">{{ js | jsmin | safe }}</script>
