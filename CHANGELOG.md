@@ -29,6 +29,7 @@ _Track upcoming changes_
 
 - Injecting minified JS into templates using `_includes`
 - Added `jsmin` filter to `.eleventy.js` as global filter
+- Added `squash` filter to `.eleventy.js` as global filter
 - Added `_data/locales.js` data template.
 
 ### Changed 

@@ -30,7 +30,7 @@ module.exports = {
     let content = new String(text);
 
     // all lower case, please
-    let content = content.toLowerCase();
+    content = content.toLowerCase();
 
     // remove all html elements and new lines
     let re = /(&lt;.*?&gt;)|(<.*?>)/gi;
