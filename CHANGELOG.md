@@ -38,6 +38,7 @@ _Track upcoming changes_
 - Global Filters now imported from `utils/filter.js`
 - sass migration to modern practices - Removed `@imports` where possible. Replaced with `@use` and `@forward`.
 - Courtesy Page. Full setup using `courtesy.md` frontmatter entries.
+- SASS folders structure to better match templating/layouts naming conventions.
 
 ### Deprecated 
 <small>`(soon-to-be removed features)`</small>
