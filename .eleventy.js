@@ -1,4 +1,5 @@
 const filters = require('./utils/filters.js')
+const transforms = require('./utils/transforms.js')
 
 // 11ty configuration
 const
@@ -7,15 +8,11 @@ const
 
 module.exports = function (eleventyConfig) {
 
-  /** 
-   * watch targets for build pipeline
-   **/
+  // watch targets for build pipeline
   eleventyConfig.addWatchTarget("./src/assets/sass/");
   eleventyConfig.addWatchTarget('./src/js/');
 
-  /** 
-   * LIBRARIES and PLUGINS 
-   **/
+  // LIBRARIES and PLUGINS
   let markdownIt = require("markdown-it");
   let markdownItEmoji = require("markdown-it-emoji");
   let options = {
@@ -27,9 +24,7 @@ module.exports = function (eleventyConfig) {
   let markdownLib = markdownIt(options).use(markdownItEmoji);
   eleventyConfig.setLibrary("md", markdownLib);
 
-  /**
-   * Static passthroughs
-   **/
+  // Static passthroughs
 
   // eleventyConfig.addPassthroughCopy("./src/assets/fonts/");
   // eleventyConfig.addPassthroughCopy("./src/assets/img/");
@@ -43,6 +38,11 @@ module.exports = function (eleventyConfig) {
   // Filters
   Object.keys(filters).forEach((filterName) => {
     eleventyConfig.addFilter(filterName, filters[filterName])
+  })
+
+  // Transforms
+  Object.keys(transforms).forEach((transformName) => {
+    eleventyConfig.addTransform(transformName, transforms[transformName])
   })
 
   /** 

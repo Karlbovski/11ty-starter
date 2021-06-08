@@ -7,6 +7,7 @@
 ```sh
     "@11ty/eleventy": "^0.12.1",
     "dayjs": "^1.10.5",
+    "html-minifier": "^4.0.0",
     "markdown-it": "^12.0.6",
     "markdown-it-emoji": "^2.0.0",
     "npm-run-all": "^4.1.5",
@@ -112,13 +113,6 @@ It's a combination of the `prefers-color-scheme` media query and CSS custom prop
 ## Filters
 Filters are served from dedicated files and imported using `.eleventy.js` config file. I prefer this way of doing it but as always in **11ty** we can mix and match the ways we do our thing.
 
-## Courtesy Page
-<small>_layout_ : `courtesy.njk`</small>
-
-<small>_data-template_ : `courtesy.md`</small>
-
-Template for a courtesy page that allows to set it's parameters with countdown feature. Perfect for a redirect during maintenance!!
-
 ##  Included Filters Usage
 <small>in `utils/filters.js`</small>
 ### Date
@@ -129,8 +123,9 @@ Use [dayjs](https://day.js.org/en/) to handle date-time stuff.
 <time>{{ post.date | date('YYYY-MM-DD') }}"</time>
 ...
 ```
+
 ### Excerpts
-Create an excerpt of custom lenght.
+_Create an excerpt of custom lenght_
 ```html
   <- Usage Example Nunjucks ->
   ...
@@ -140,7 +135,7 @@ Create an excerpt of custom lenght.
   ...
 ```
 ### jsmin
-Compress and combine js files
+_Compress and combine js files_
 ```html
   <- Usage Example Nunjucks ->
   ...
@@ -152,15 +147,28 @@ Compress and combine js files
   <script type="text/javascript">{{ js | jsmin | safe }}</script>
   ...
 ```
+## Transforms 
+
+### htmlmin
+_Minifies html_
+
+## Courtesy Page
+<small>_layout_ : `courtesy.njk`</small>
+
+<small>_data-template_ : `courtesy.md`</small>
+
+Template for a courtesy page that allows to set it's parameters with countdown feature. Perfect for a redirect during maintenance!!
 
 ---
 
 I might add more features in the future but I'll do my best to remind myself not 
 to go into the "this has to be more Generic" rabbit hole!! 🐇
 
-... 
-This is a Starter! This is a Starter! This is a Starter! This is a Starter! 
-...
+ 
+> Me : "This is a Starter! This is a Starter! This is a Starter! This is a Starter! "
+
+> also me: "Aaand..it's opinionated, you're welcome!" :sad:
+
 
 # Javascript pipeline
 > _...11ty has no standardized way of handling assets...it gives you the flexibility to handle this any way you want, rather than forcing an opinionated way of doing things on you that might not fit your specific needs._
