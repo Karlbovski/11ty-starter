@@ -9,5 +9,5 @@ heroDescription: >
 endTime: "Jun 8, 2021 13:52:00"
 heroTextCompleted: We Have Arrived!
 heroDescriptionCompleted: The big day is finally here - we are live at 
-layout: "layouts/courtesy.njk"
+layout: "layouts/courtesy.html"
 ---

@@ -4,30 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        {% if metaTitle %}
-        {{ metaTitle }}
-        {% else %}
-        {{ site.metaTitle }}
-        {% endif %}
-    </title>
+    {% include "partials/metainfo.html" %}
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Quattrocento&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/css/main.css' | url }}" />
     <meta name="description"
         content="{% if metaDescription %}{{ metaDescription }}{% else %}{{ site.metaDescription }}{% endif %}">
     <meta name="keywords" content="{% if metaKeywords %}{{ metaKeywords }}{% else %}{{ site.metaKeywords }}{% endif %}">
-
-    {# {% include "partials/favicons.njk" %} #}
-    {% include "partials/opengraph.njk" %}
+    <!-- {% include "partials/favicons.html" %} -->
 </head>
 
 <body>
-    {% include "partials/header.njk" %}
+    {% include "partials/header.html" %}
     <main>
-        {% block content %}
-        {{ content | safe }}
-        {% endblock %}
+        {% block content %}{% endblock %}
     </main>
     {% include "partials/footer.njk" %}
 </body>

@@ -34,9 +34,6 @@ module.exports = [{
     label: "english",
     locale: "en",
     default: true,
-    header: "Content in",
-    metaTitle: "Just another 11ty-Starter",
-    metaDescription: "Description in english",
     navItems: [{
         label: "Home",
         url: "/"
@@ -50,9 +47,27 @@ module.exports = [{
   {
     label: "français",
     locale: "fr",
-    header: "Contenu en",
-    metaTitle: "Title in Français",
-    metaDescription: "Description in français"
+    navItems: [{
+        label: "Home",
+        url: "/fr/"
+      },
+      {
+        label: "About",
+        url: "/fr/about/index.html"
+      }
+    ]
+  },
+  {
+    label: "italiano",
+    locale: "it"
+  },
+  {
+    label: "español",
+    locale: "es"
+  },
+  {
+    label: "deutsch",
+    locale: "de"
   },
   ...
 ```
@@ -71,18 +86,17 @@ locale: "en"
 ```
 We have a connection between the **layouts** and the **data-template** `locales`.
 
-We could then iterate the data-template `locales` to look for a match with the **layout** `locale` key in its frontmatter :
+We could, for example,  iterate the data-template `locales.js` to look for a match with the **page** `locale` key in its frontmatter :
 
 ```sh
 {% for language in locales %}
   {% if locale and locale === language.locale %}
-    {% set metaTitle = language.metaTitle %}
-    {% set metaDescription = language.metaDescription %}
     # { _do more awesome stuff_ } #
   {% endif %}
 {% endfor %}
 ``` 
-Or set our navigation items to match the current language :
+### A practical example:
+Set our navigation items to match the current language :
 ```sh
 <header>
   {% for language in locales %}
@@ -153,9 +167,9 @@ _Compress and combine js files_
 _Minifies html_
 
 ## Courtesy Page
-<small>_layout_ : `courtesy.njk`</small>
+<small>layout : `courtesy.html`</small>
 
-<small>_data-template_ : `courtesy.md`</small>
+<small>page : `courtesy.md`</small>
 
 Template for a courtesy page that allows to set it's parameters with countdown feature. Perfect for a redirect during maintenance!!
 
@@ -249,6 +263,8 @@ Now we can add our **Client-side Javascript** in ours templates.
 <script type="text/javascript">{{ js | jsmin | safe }}</script>
 ```
 > _If we keep all the above small and we use filters to integrate further functionalities, this is a very flexible and intuitive approach. I'm using it more and more often._
+
+>NOTE<br>The footer partial format is `.njk`. I was having troubles using `.html` since the last line of code `<script type="text/javascript">{{ js | jsmin | safe }}</script>` was wrongly formatted.<br>... _stay-tuned_ ...
 
 ## External Modular approach
 

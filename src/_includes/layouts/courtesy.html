@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="{% if locale %}{{ locale }}{% else %}en{% endif %}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% if metaTitle %}
+        {{ metaTitle }}
+        {% else %}
+        {{ site.metaTitle }}
+        {% endif %}
+    </title>
+    <meta name="description"
+        content="{% if metaDescription %}{{ metaDescription }}{% else %}Global Description{% endif %}">
+    <meta name="keywords" content="{% if metaKeywords %}{{ metaKeywords }}{% else %}Global Keywords{% endif %}">
+    <style>
+        html {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            background: hsla(210, 6%, 46%, 1);
+            background: linear-gradient(90deg, hsla(210, 6%, 46%, 1) 0%, hsla(192, 10%, 19%, 1) 100%);
+            background: -moz-linear-gradient(90deg, hsla(210, 6%, 46%, 1) 0%, hsla(192, 10%, 19%, 1) 100%);
+            background: -webkit-linear-gradient(90deg, hsla(210, 6%, 46%, 1) 0%, hsla(192, 10%, 19%, 1) 100%);
+            color: #fff;
+            font-family: sans-serif;
+            text-align: center;
+            min-height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        p {
+            font-family: monospace;
+            font-size: 1.124em;
+        }
+
+        a {
+            color: #fff;
+        }
+
+        #countdown {
+            max-width: 600px;
+        }
+
+        #countdown ul {
+            margin: 5% 0 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2%;
+        }
+
+        #countdown ul li {
+            flex: 25%;
+            padding: 5%;
+            margin: 0 0 5%;
+            list-style: none;
+            background: #333;
+            border-radius: 5px;
+            /* text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.7), 0 0 22px rgba(255, 255, 255, 0.6), */
+            /* 0 0 50px rgba(66, 220, 219, 0.3); */
+        }
+
+        #countdown ul li span {
+            display: block;
+            font-size: 3rem;
+        }
+
+        .countdown__header {
+            text-align: left;
+        }
+
+        .countdown__footer {
+            flex: 100%;
+            padding: 5%;
+            display: flex;
+            justify-content: flex-end;
+            gap: 1em;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        @media(min-width: 48em) {
+            h1 {
+                font-size: 3rem;
+            }
+
+            #countdown ul {
+                flex-wrap: nowrap !important;
+            }
+        }
+    </style>
+    {# {% include "partials/favicons.njk" %} #}
+</head>
+
+<body>
+    <main>
+        <div id="countdown" class="countdown">
+            <div class="countdown__header">
+                <div id="run">
+                    <p>
+                        <small>{{ site.name }}</small>
+                    </p>
+                    <h1>{{ heroText }}</h1>
+                    <p>{{ heroDescription }}</p>
+                </div>
+                <div id="arrived" class="hide">
+                    <p>
+                        <small>{{ site.name }}</small>
+                    </p>
+                    <h1>{{ heroTextCompleted }}</h1>
+                    <p>{{ heroDescriptionCompleted }}</p>
+                    <p>
+                        <a href="{{ site.url }}" rel="noopener">{{ site.url | slug }}</a>
+                    </p>
+                </div>
+            </div>
+            <ul>
+                <li>
+                    <span id="days"></span>Days</li>
+                <li>
+                    <span id="hours"></span>Hours</li>
+                <li>
+                    <span id="minutes"></span>Minutes</li>
+                <li>
+                    <span id="seconds"></span>Seconds</li>
+            </ul>
+            <div id="footer" class="countdown__footer">
+                <a href="#" rel="noopener" target="_blank">link-1</a>
+                <a href="#" rel="noopener" target="_blank">link-2</a>
+                <a href="#" rel="noopener" target="_blank">link-3</a>
+            </div>
+        </div>
+    </main>
+    <script>
+        (() => {
+            const sec = 1000,
+                min = sec * 60,
+                hour = min * 60,
+                day = hour * 24;
+            const end = new Date("$            {{ endTime }}").getTime();
+            const int = setInterval(() => {
+                const current = new Date().getTime();
+                const remaining = end - current;
+                document.getElementById("days").innerText = Math.floor(remaining / day);
+                document.getElementById("hours").innerText = Math.floor((remaining % day) / hour);
+                document.getElementById("minutes").innerText = Math.floor((remaining % hour) / min);
+                document.getElementById("seconds").innerText = Math.floor((remaining % min) / sec);
+                if (remaining < 0) {
+                    document
+                        .querySelector("#run")
+                        .classList
+                        .add("hide");
+                    document
+                        .querySelector("#footer")
+                        .classList
+                        .add("hide");
+                    document
+                        .querySelector("#arrived")
+                        .classList
+                        .remove("hide");
+                    const digit = document.querySelectorAll("span");
+                    digit.forEach((digit) => {
+                        digit.innerText = "0";
+                    });
+                    clearInterval(int);
+                }
+            }, 1000);
+        })();
+    </script>
+</body>
+
+</html>

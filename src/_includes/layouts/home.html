@@ -1,0 +1,13 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+<div>
+  <h1>{{title}}</h1>
+  <small>
+    <p> page created :
+      <time datetime="{{ page.date | dateToFormat('YYYY-MM-DD') }}">{{ page.date | dateToFormat('YYYY-MM-DD') }}</time>
+    </p>
+  </small>
+  {{ content | safe }}
+</div>
+{% endblock %}

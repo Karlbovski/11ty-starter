@@ -5,16 +5,16 @@
       <p>{{ footer[locale].addressStreet }}, {{ footer[locale].addressNumber }}</p>
       <p>{{ footer[locale].addressPostcode }}, {{ footer[locale].addressCity }}</p>
     {% else %}
-      <p>{{ locales[0].header }}
-        {{ locales[0].label }}</p>
-      <p>{{ locales[0].metaDescription }}</p>
+      <p>{{ footer["en"].addressTitle }}</p>
+      <p>{{ footer["en"].addressStreet }}, {{ footer["en"].addressNumber }}</p>
+      <p>{{ footer["en"].addressPostcode }}, {{ footer["en"].addressCity }}</p>
     {% endif %}
   </div>
   <p>
     <small>&copy;2021-present The Web</small>
   </p>
 </footer>
-{# <script type="module" src="/js/main.js"></script> #}
+<!-- <script type="module" src="/js/main.js"></script> -->
 {% set js %}
 {% include "js/dom.js" %}
 {% include "js/core.js" %}

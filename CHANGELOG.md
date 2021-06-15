@@ -7,22 +7,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 #
 
 ## [Unreleased]
-_Track upcoming changes_
+_Track upcoming changes_ :
+
+- tbd
+
+## 
+ _Next_ :
 
 - Exposed Javascript Global functions
   - [docs](https://www.11ty.dev/docs/languages/javascript/#javascript-template-functions)
 - Abstraction of **opinionated** functionalities into Plugins
   - -> tbd
-- Localization helpers | `locales.js`
 - Add Global `shortcodes`
 - How to? Implement 3rd party CSS framework/libraries
   -  Implement Bulma or other third-party framework with Dart Sass (`@use` and `@forward`).
-
+  
+  ...
 #
 
 ## branch > _main_
 
-## [0.0.6] <small> Jun 6, 2021</small>
+## [0.0.6] <small> Jun 15, 2021</small>
 
 ### Added 
 <small>`(new features)`</small>
@@ -32,6 +37,7 @@ _Track upcoming changes_
 - Added `squash` filter to `.eleventy.js` as global filter
 - Added `htmlmin` transform as global transform.
 - Added `_data/locales.js` data template.
+- Added new `metainfo.html` partial with better logics
 
 ### Changed 
 <small>`(changes in existing functionality)`</small>
@@ -40,6 +46,7 @@ _Track upcoming changes_
 - sass migration to modern practices - Removed `@imports` where possible. Replaced with `@use` and `@forward`.
 - Courtesy Page. Full setup using `courtesy.md` frontmatter entries.
 - SASS folders structure to better match templating/layouts naming conventions.
+- Since we use `htmlTemplateEngine: "njk"` in our configuration we can use  `.html` files extension for layouts ad partials.
 
 ### Deprecated 
 <small>`(soon-to-be removed features)`</small>
@@ -51,6 +58,9 @@ _Track upcoming changes_
 - removed npm package `rollup`
 - removed npm package `rollup-plugin-terser`
 - removed `_data/header.js` . Info moved into `_data/locales.js`
+- removed metaTitle and metaDescriptions from locales
+- removed baseLocales.njk and templating tree(include as _includes and with more robust logics).
+- `opengraphs.njk` partial (now included in `metainfo.html`)
 
 ### Fixed 
 <small>`(any bug fixes)`</small>

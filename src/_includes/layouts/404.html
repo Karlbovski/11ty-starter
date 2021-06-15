@@ -1,0 +1,13 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+<div>
+  <div>
+    <h1>{{ title }}</h1>
+    <h2>{{ summary }}</h2>
+    <p>This is where you should tell the user how to find their content. Maybe on the <a
+        href="{{ "/" | url }}">homepage?</a></p>
+    {{ content | safe}}
+  </div>
+</div>
+{% endblock %}

@@ -1,15 +1,13 @@
 ---
-metaTitle: About
+title: About
+summary: 
+  I'm the  meta-description in frontmatter. 
+  I got super-powers! 
+layout: "layouts/home.html"
 ---
 
-{% extends "layouts/base.njk" %}
-
 {% block content %}
- <div>  
-   <h1>{{metaTitle}}</h1>
-   <p> started : 
-    <time datetime="{{ page.date | dateToFormat('YYYY-MM-DD') }}">{{ page.date | dateToFormat('YYYY-MM-DD') }}</time>
-  </p>
+ <div>
   <h2>You wanna have an easy and happy life with <b>11ty</b>?</h2>
   <h3>Always think at the Eleventy Data Cascade</h3>
   <small>the order of priority for sources of data is (from highest priority to lowest):</small>
