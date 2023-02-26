@@ -1,27 +1,27 @@
-# 11ty starter  
-<small>`v0.0.6`</small>
-
-<small>dev-cycle `2021.2`</small>
-
+# 11ty starter
+<small>`v0.0.6`</small> |
+<small>dev-cycle `2021.2`</small> | 
 <small>NPM Packages</small>
 ```sh
-    "@11ty/eleventy": "^0.12.1",
-    "dayjs": "^1.10.5",
+    "@11ty/eleventy": "^2.0.0",
+    "dayjs": "^1.11.7",
     "html-minifier": "^4.0.0",
-    "markdown-it": "^12.0.6",
-    "markdown-it-emoji": "^2.0.0",
+    "markdown-it": "^13.0.1",
+    "markdown-it-emoji": "^2.0.2",
     "npm-run-all": "^4.1.5",
-    "sass": "^1.32.8"
+    "sass": "^1.58.3"
 ```
 :construction: :construction: :construction: :construction:
 
-# Nothing fancy here, just a very simple starter for my [11ty](https://www.11ty.dev/) projects.
+## Nothing fancy here, just a very simple starter for my [11ty](https://www.11ty.dev/) projects.
 
 The most barebone setup for a **clone-init-dev** experience and **almost** zero-config approach.
 
-I've only added a few pre-configured elements to help me with my usual workflow :
+I've only added a few pre-configured elements to help me with my usual workflow.
 
-## Multilanguage and Localization
+<br>
+
+# Multilanguage and Localization
 The starter is already structured to allow localization and multilanguage features.
 
 [This awesome tutorial](https://www.webstoemp.com/blog/multilingual-sites-eleventy/) by [Jérôme Coupé](https://github.com/jeromecoupe) shows a clever approach to implement those features.
@@ -120,14 +120,18 @@ Set our navigation items to match the current language :
 
 ><b>tl;dr</b><br>If a page has no `locale` specified in its frontmatter, we could pick one from `locales.js` that has the `default` parameter set or just do nothing and let the `base.njk` template to fallback to global values.<br> 
 
-## DarkMode
+<br>
+
+# Dark Mode
 There's a ready to use implementation of a dark/light mode switch.
 It's a combination of the `prefers-color-scheme` media query and CSS custom properies.
 
-## Filters
+<br>
+
+# Filters
 Filters are served from dedicated files and imported using `.eleventy.js` config file. I prefer this way of doing it but as always in **11ty** we can mix and match the ways we do our thing.
 
-##  Included Filters Usage
+## Included Filters Usage
 <small>in `utils/filters.js`</small>
 ### Date
 Use [dayjs](https://day.js.org/en/) to handle date-time stuff.
@@ -161,12 +165,17 @@ _Compress and combine js files_
   <script type="text/javascript">{{ js | jsmin | safe }}</script>
   ...
 ```
-## Transforms 
+
+<br>
+
+# Transforms 
 
 ### htmlmin
 _Minifies html_
 
-## Courtesy Page
+<br>
+
+# Courtesy Page
 <small>layout : `courtesy.html`</small>
 
 <small>page : `courtesy.md`</small>
@@ -183,11 +192,14 @@ to go into the "this has to be more Generic" rabbit hole!! 🐇
 
 > also me: "Aaand..it's opinionated, you're welcome!" :sad:
 
+<br>
 
 # Javascript pipeline
 > _...11ty has no standardized way of handling assets...it gives you the flexibility to handle this any way you want, rather than forcing an opinionated way of doing things on you that might not fit your specific needs._
 
 For example Client-side JavaScript could be handled with a **transform**, but **JavaScript** templates named <something>.`11ty.js` are also an option because they’re automatically processed by **Eleventy**.
+
+<br>
 
 # Let 11ty do the thing
 

@@ -1,7 +1,7 @@
 module.exports = {
   en: {
     addressTitle: "Address",
-    addressStreet: "Market street",
+    addressStreet: "Market Street",
     addressNumber: "42",
     addressPostcode: "1000",
     addressCity: "Brussels",
