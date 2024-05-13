@@ -4,16 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-#
+# [Unreleased]
 
-## [Unreleased]
 _Track upcoming changes_ :
-
-- tbd
-
-## 
- _Next_ :
-
+- remove html-minifier due to high vulnerabilty issue and no longer maintained and find a substitute(maybe Terser).
+- solve issue with markdown-it emoji plugin
 - Exposed Javascript Global functions
   - [docs](https://www.11ty.dev/docs/languages/javascript/#javascript-template-functions)
 - Abstraction of **opinionated** functionalities into Plugins
@@ -21,11 +16,10 @@ _Track upcoming changes_ :
 - Add Global `shortcodes`
 - How to? Implement 3rd party CSS framework/libraries
   -  Implement Bulma or other third-party framework with Dart Sass (`@use` and `@forward`).
-  
-  ...
-#
 
-## branch > _main_
+<br>
+
+# [Releases]
 
 ## [0.0.6] <small> Jun 15, 2021</small>
 

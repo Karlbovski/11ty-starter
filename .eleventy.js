@@ -14,17 +14,20 @@ module.exports = function (eleventyConfig) {
 
   // LIBRARIES and PLUGINS
   let markdownIt = require("markdown-it");
-  let markdownItEmoji = require("markdown-it-emoji");
   let options = {
     html: true,
     breaks: true,
     linkify: true
   };
-
-  let markdownLib = markdownIt(options).use(markdownItEmoji);
+  
+  // eleventyConfig.setLibrary("md", markdownIt(options));
+  let markdownLib = markdownIt(options);
   eleventyConfig.setLibrary("md", markdownLib);
+  
+  // let markdownItEmoji = require("markdown-it-emoji");
+  // eleventyConfig.amendLibrary("md", (markdownLib) => markdownLib.use(markdownItEmoji)); // ERROR !! plugin.apply is not a function !!
 
-  // Static passthroughs
+  // STATIC PASSTHROUGHS
 
   // eleventyConfig.addPassthroughCopy("./src/assets/fonts/");
   // eleventyConfig.addPassthroughCopy("./src/assets/img/");
@@ -35,15 +38,15 @@ module.exports = function (eleventyConfig) {
       // eleventyConfig.addPassthroughCopy("./src/assets/");
   */
 
-  // Filters
+  // FILTERS
   Object.keys(filters).forEach((filterName) => {
     eleventyConfig.addFilter(filterName, filters[filterName])
   })
 
-  // Transforms
-  Object.keys(transforms).forEach((transformName) => {
-    eleventyConfig.addTransform(transformName, transforms[transformName])
-  })
+  // TRANSFORMS
+  // Object.keys(transforms).forEach((transformName) => {
+  //   eleventyConfig.addTransform(transformName, transforms[transformName])
+  // })
 
   /** 
    * add Collections 
