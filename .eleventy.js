@@ -20,12 +20,20 @@ module.exports = function (eleventyConfig) {
     linkify: true
   };
   
-  // eleventyConfig.setLibrary("md", markdownIt(options));
   let markdownLib = markdownIt(options);
   eleventyConfig.setLibrary("md", markdownLib);
   
-  // let markdownItEmoji = require("markdown-it-emoji");
-  // eleventyConfig.amendLibrary("md", (markdownLib) => markdownLib.use(markdownItEmoji)); // ERROR !! plugin.apply is not a function !!
+// ISSUE !!
+  let emoji;
+  eleventyConfig.on('eleventy.before', async ({}) => {
+    try{
+      emoji = (await import('markdown-it-emoji')).bare;
+      eleventyConfig.amendLibrary("md", (markdownLib) => markdownLib.use(emoji));
+      console.debug("emoji is:", emoji);
+    }catch{
+      console.error("error:", error);
+    }
+  });
 
   // STATIC PASSTHROUGHS
 

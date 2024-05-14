@@ -7,8 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 # [Unreleased]
 
 _Track upcoming changes_ :
-- remove html-minifier due to high vulnerabilty issue and no longer maintained and find a substitute(maybe Terser).
-- solve issue with markdown-it emoji plugin
+- temporary remove html-minifier due to high vulnerabilty issue and no longer maintained. Looking for a substitute, maybe Terser, or to see if html-min is actually an issue in the context of thisproject since **we're not passing arbitrary user input to html-minifier at runtime. We’re passing limited input under our control at build time...**
+- solve the issue with markdown-it-emoji plugin
 - Exposed Javascript Global functions
   - [docs](https://www.11ty.dev/docs/languages/javascript/#javascript-template-functions)
 - Abstraction of **opinionated** functionalities into Plugins
@@ -24,7 +24,7 @@ _Track upcoming changes_ :
 ## [0.0.6] <small> Jun 15, 2021</small>
 
 ### Added 
-<small>`(new features)`</small>
+<small>new features:</small>
 
 - Injecting minified JS into templates using `_includes`
 - Added `jsmin` filter to `.eleventy.js` as global filter
@@ -34,7 +34,7 @@ _Track upcoming changes_ :
 - Added new `metainfo.html` partial with better logics
 
 ### Changed 
-<small>`(changes in existing functionality)`</small>
+<small>changes in existing functionality:</small>
 
 - Global Filters now imported from `utils/filter.js`
 - sass migration to modern practices - Removed `@imports` where possible. Replaced with `@use` and `@forward`.
@@ -43,10 +43,10 @@ _Track upcoming changes_ :
 - Since we use `htmlTemplateEngine: "njk"` in our configuration we can use  `.html` files extension for layouts ad partials.
 
 ### Deprecated 
-<small>`(soon-to-be removed features)`</small>
+<small>soon-to-be removed features:</small>
 
 ### Removed 
-<small>`(now removed features)`</small>
+<small>now removed features:</small>
 
 - JS bundle implementation solution was removed but still implementable if needed. [See readme file](.github/readme.md).
 - removed npm package `rollup`
@@ -57,14 +57,14 @@ _Track upcoming changes_ :
 - `opengraphs.njk` partial (now included in `metainfo.html`)
 
 ### Fixed 
-<small>`(any bug fixes)`</small>
+<small>any bug fixes:</small>
 
-### Known Issues 
-<small>`(aware they are in this release)`</small>
+### Known Issues
+- `markdown-it-emoji` not working
 
 ### Security 
-<small>`(in case of vulnerabilities)`</small>
+<small>in case of vulnerabilities:</small>
 
-- `npm audit` > 3 moderate severity vulnerabilities in 426 scanned packages
+`npm audit found 0 vulnerabilities`
 
 # 
