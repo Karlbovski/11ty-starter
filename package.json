@@ -22,11 +22,14 @@
     "url": "git://github.com/Karlbovski/11ty-starter"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.0",
-    "dayjs": "^1.11.7",
+    "@11ty/eleventy": "^3.1.2",
+    "dayjs": "^1.11.13",
     "markdown-it": "^14.1.0",
     "markdown-it-emoji": "^3.0.0",
     "npm-run-all": "^4.1.5",
-    "sass": "^1.58.3"
+    "sass": "^1.89.2"
+  },
+  "dependencies": {
+    "uglify-js": "^3.19.3"
   }
 }
