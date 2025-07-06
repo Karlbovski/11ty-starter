@@ -1,6 +1,6 @@
 {
   "name": "11ty-starter",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "description": "Just what I need to start an 11ty project.",
   "scripts": {
     "watch:sass": "sass --watch src/assets/sass:public/css",
