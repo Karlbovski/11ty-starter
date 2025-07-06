@@ -5,9 +5,8 @@
 ```sh
     "@11ty/eleventy": "^2.0.0",
     "dayjs": "^1.11.7",
-    "html-minifier": "^4.0.0",
-    "markdown-it": "^13.0.1",
-    "markdown-it-emoji": "^2.0.2",
+    "markdown-it": "^14.1.0",
+    "markdown-it-emoji": "^3.0.0",
     "npm-run-all": "^4.1.5",
     "sass": "^1.58.3"
 ```
@@ -199,9 +198,8 @@ to go into the "this has to be more Generic" rabbit hole!! 🐇
 
 For example Client-side JavaScript could be handled with a **transform**, but **JavaScript** templates named <something>.`11ty.js` are also an option because they’re automatically processed by **Eleventy**.
 
-<br>
 
-# Let 11ty do the thing
+### Let 11ty do the thing
 
 > _I'm moving this project towards a fully-integrated way of doing things. std-by..._
 
@@ -209,7 +207,7 @@ Menawhile read this :
     
 [Asset Pipelines in Eleventy by Max Böck](https://mxb.dev/blog/eleventy-asset-pipeline/)
 
-## Don't be Me!
+### Don't be Me!
 Enable `.11ty.js` templates in your config :
 
 <small>`.eleventy.js`</small>
@@ -228,7 +226,7 @@ Enable `.11ty.js` templates in your config :
 ...
 ```
 
-## Eleventy - Includes with filters
+## Option#1: Eleventy - Includes with filters
 This is an example of approach that is fully integrated with **11ty** pipeline and it's **implemented in this starter**.
 
 We have our **modules** inside the default `_includes` folder.
@@ -278,9 +276,9 @@ Now we can add our **Client-side Javascript** in ours templates.
 
 >NOTE<br>The footer partial format is `.njk`. I was having troubles using `.html` since the last line of code `<script type="text/javascript">{{ js | jsmin | safe }}</script>` was wrongly formatted.<br>... _stay-tuned_ ...
 
-## External Modular approach
+## Option#2: External Modular approach
 
-This pipeline is taken from an article by [Craig Buckler](https://www.sitepoint.com/author/craig-buckler) on Sitepoint : [ Getting Started with 11ty](https://www.sitepoint.com/getting-started-with-eleventy/). 
+Another interesting pipeline taken from an article by [Craig Buckler](https://www.sitepoint.com/author/craig-buckler) on Sitepoint : [ Getting Started with 11ty](https://www.sitepoint.com/getting-started-with-eleventy/). 
 
 <small>All modules are bundled and minified at build-time using: </small>
 ```sh

@@ -14,17 +14,28 @@ module.exports = function (eleventyConfig) {
 
   // LIBRARIES and PLUGINS
   let markdownIt = require("markdown-it");
-  let markdownItEmoji = require("markdown-it-emoji");
   let options = {
     html: true,
     breaks: true,
     linkify: true
   };
-
-  let markdownLib = markdownIt(options).use(markdownItEmoji);
+  
+  let markdownLib = markdownIt(options);
   eleventyConfig.setLibrary("md", markdownLib);
+  
+// ISSUE !!
+  let emoji;
+  eleventyConfig.on('eleventy.before', async ({}) => {
+    try{
+      emoji = (await import('markdown-it-emoji')).bare;
+      eleventyConfig.amendLibrary("md", (markdownLib) => markdownLib.use(emoji));
+      console.debug("emoji is:", emoji);
+    }catch{
+      console.error("error:", error);
+    }
+  });
 
-  // Static passthroughs
+  // STATIC PASSTHROUGHS
 
   // eleventyConfig.addPassthroughCopy("./src/assets/fonts/");
   // eleventyConfig.addPassthroughCopy("./src/assets/img/");
@@ -35,15 +46,15 @@ module.exports = function (eleventyConfig) {
       // eleventyConfig.addPassthroughCopy("./src/assets/");
   */
 
-  // Filters
+  // FILTERS
   Object.keys(filters).forEach((filterName) => {
     eleventyConfig.addFilter(filterName, filters[filterName])
   })
 
-  // Transforms
-  Object.keys(transforms).forEach((transformName) => {
-    eleventyConfig.addTransform(transformName, transforms[transformName])
-  })
+  // TRANSFORMS
+  // Object.keys(transforms).forEach((transformName) => {
+  //   eleventyConfig.addTransform(transformName, transforms[transformName])
+  // })
 
   /** 
    * add Collections 

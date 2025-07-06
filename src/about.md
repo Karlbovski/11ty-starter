@@ -11,6 +11,7 @@ layout: "layouts/home.html"
   <h2>You wanna have an easy and happy life with <b>11ty</b>?</h2>
   <h3>Always think at the Eleventy Data Cascade</h3>
   <small>the order of priority for sources of data is (from highest priority to lowest):</small>
+
   <ol>
     <li><a href="https://www.11ty.dev/docs/data-computed/" rel=noopener target=_blank>Computed Data</a></li>
     <li><a href="https://www.11ty.dev/docs/data-frontmatter/" rel=noopener target=_blank>Front Matter Data in a Template </a></li>
