@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 # [Unreleased]
 
 _Track upcoming changes_ :
-- temporary remove html-minifier due to high vulnerabilty issue and no longer maintained. Looking for a substitute, maybe Terser, or to see if html-min is actually an issue in the context of thisproject since **we're not passing arbitrary user input to html-minifier at runtime. We’re passing limited input under our control at build time...**
+- temporary remove html-minifier due to high vulnerabilty issue and no longer maintained. Looking for a substitute, maybe Terser or [html-nano](https://htmlnano.netlify.app/), or to see if html-min is actually an issue in the context of this project since **we're not passing arbitrary user input to html-minifier at runtime. We’re passing limited input under our control at build time...**
 - solve the issue with markdown-it-emoji plugin
 - Exposed Javascript Global functions
   - [docs](https://www.11ty.dev/docs/languages/javascript/#javascript-template-functions)
